@@ -13,6 +13,7 @@ bool checkDeviceExtensionSupport(VkPhysicalDevice device) {
     for (const auto& extension : availableExtensions) {
         requiredExtensions.erase(extension.extensionName);
     }
+    
 
     return requiredExtensions.empty();
 }
@@ -28,8 +29,10 @@ bool isDeviceSuitable(VkPhysicalDevice device, VulkanContext &ctx) {
         SwapChainSupportDetails swapChainSupport = querySwapChainSupport(device, ctx);
         swapChainAdequate = !swapChainSupport.formats.empty() && !swapChainSupport.presentModes.empty();
     }
+    VkPhysicalDeviceFeatures supportedFeatures;
+    vkGetPhysicalDeviceFeatures(device, &supportedFeatures);
 
-    return indices.isComplete() && extensionsSupported && swapChainAdequate;
+    return indices.isComplete() && extensionsSupported && swapChainAdequate && supportedFeatures.samplerAnisotropy;
 }
 
 PhysicalDevice::PhysicalDevice(VulkanContext &ctx) :ctx(ctx) {

@@ -10,8 +10,9 @@ class Image {
         int height;
         int success;
         int size;
+        int depth;
 
-        std::vector<unsigned char> pixels;
+        unsigned int *pixels;
         void loadPPM(const std::string& path);
         Image(){};
         ~Image();

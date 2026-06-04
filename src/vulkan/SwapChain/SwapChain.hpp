@@ -3,6 +3,8 @@
 #include "main.hpp"
 // #include "../Pipeline/Pipeline.hpp"
 
+#include "../VImage/VImage.hpp"
+
 #include "../Pipeline/Pipeline.hpp"
 
 
@@ -19,6 +21,7 @@ SwapChainSupportDetails querySwapChainSupport(VkPhysicalDevice device, VulkanCon
 class SwapChain {
 
     public:
+        VImage                          *image;
         Buffer                          *vertexBuffer;
         Buffer                          *indexBuffer;
         std::vector<Buffer*>             uniformBuffers;

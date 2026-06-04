@@ -7,7 +7,7 @@ class ImageView
 public:
     VkImageView                imageView;
 
-    ImageView(VImage &image, VkFormat format, VulkanContext &ctx);
+    ImageView(VkImage &image, VkFormat format, VulkanContext &ctx);
     ~ImageView();
     
 private:

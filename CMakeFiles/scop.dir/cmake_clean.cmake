@@ -11,6 +11,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/scop.dir/src/vulkan/CommandBuffer/SingleUseCommandBuffer.cpp.o.d"
   "CMakeFiles/scop.dir/src/vulkan/Device/Decive.cpp.o"
   "CMakeFiles/scop.dir/src/vulkan/Device/Decive.cpp.o.d"
+  "CMakeFiles/scop.dir/src/vulkan/ImageView/ImageView.cpp.o"
+  "CMakeFiles/scop.dir/src/vulkan/ImageView/ImageView.cpp.o.d"
   "CMakeFiles/scop.dir/src/vulkan/Instance/Instance.cpp.o"
   "CMakeFiles/scop.dir/src/vulkan/Instance/Instance.cpp.o.d"
   "CMakeFiles/scop.dir/src/vulkan/PhysicalDevice/PhysicalDevice.cpp.o"

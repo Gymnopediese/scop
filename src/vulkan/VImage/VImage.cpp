@@ -3,7 +3,7 @@
 
 
 
-VImage::VImage(std::string &path, VulkanContext &ctx, VkCommandPool &commandPool) : ctx(ctx), commandPool(commandPool){
+VImage::VImage(const std::string& path, VulkanContext &ctx, VkCommandPool &commandPool) : ctx(ctx), commandPool(commandPool){
     Image image;
     image.loadPPM(path);
 
@@ -16,7 +16,7 @@ VImage::VImage(std::string &path, VulkanContext &ctx, VkCommandPool &commandPool
     Buffer stagingBuffer = Buffer(imageSize, VK_BUFFER_USAGE_TRANSFER_SRC_BIT, VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT | VK_MEMORY_PROPERTY_HOST_COHERENT_BIT, ctx);
 
 
-    stagingBuffer.mapMemory(image.pixels.data(), imageSize);
+    stagingBuffer.mapMemory(image.pixels, imageSize);
 
     VkImageCreateInfo imageInfo{};
     imageInfo.sType = VK_STRUCTURE_TYPE_IMAGE_CREATE_INFO;
@@ -63,10 +63,49 @@ VImage::VImage(std::string &path, VulkanContext &ctx, VkCommandPool &commandPool
 
     
     createTextureImageView();
+    createTextureSampler();
 }
 
 void VImage::createTextureImageView() {
-    textureImageView = new ImageView(*this, VK_FORMAT_R8G8B8A8_SRGB, ctx);
+    textureImageView = new ImageView(textureImage, VK_FORMAT_R8G8B8A8_SRGB, ctx);
+
+
+
+}
+
+void VImage::createTextureSampler()
+{
+    VkSamplerCreateInfo samplerInfo{};
+    samplerInfo.sType = VK_STRUCTURE_TYPE_SAMPLER_CREATE_INFO;
+    samplerInfo.magFilter = VK_FILTER_LINEAR;
+    samplerInfo.minFilter = VK_FILTER_LINEAR;
+
+    samplerInfo.addressModeU = VK_SAMPLER_ADDRESS_MODE_REPEAT;
+    samplerInfo.addressModeV = VK_SAMPLER_ADDRESS_MODE_REPEAT;
+    samplerInfo.addressModeW = VK_SAMPLER_ADDRESS_MODE_REPEAT;
+
+    samplerInfo.anisotropyEnable = VK_TRUE;
+    samplerInfo.maxAnisotropy = 16.0f;
+    
+    samplerInfo.borderColor = VK_BORDER_COLOR_INT_TRANSPARENT_BLACK;
+
+    samplerInfo.unnormalizedCoordinates = VK_FALSE;
+
+    samplerInfo.compareEnable = VK_FALSE;
+    samplerInfo.compareOp = VK_COMPARE_OP_ALWAYS;
+    
+    samplerInfo.mipmapMode = VK_SAMPLER_MIPMAP_MODE_LINEAR;
+    samplerInfo.mipLodBias = 0.0f;
+    samplerInfo.minLod = 0.0f;
+    samplerInfo.maxLod = 0.0f;
+
+
+    // samplerInfo.anisotropyEnable = VK_FALSE;
+    // samplerInfo.maxAnisotropy = 1.0f;
+
+    if (vkCreateSampler(*ctx.device, &samplerInfo, nullptr, &textureSampler) != VK_SUCCESS) {
+        throw std::runtime_error("échec de la creation d'un sampler!");
+    }
 
 
 
@@ -124,6 +163,7 @@ void VImage::transitionImageLayout(VkFormat format, VkImageLayout oldLayout, VkI
 
 VImage::~VImage(){
 
+    vkDestroySampler(*ctx.device, textureSampler, nullptr);
     delete textureImageView;
     vkDestroyImage(*ctx.device, textureImage, nullptr);
     vkFreeMemory(*ctx.device, textureImageMemory, nullptr);

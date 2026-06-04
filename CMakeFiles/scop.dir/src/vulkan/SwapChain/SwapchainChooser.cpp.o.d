@@ -1021,6 +1021,7 @@ CMakeFiles/scop.dir/src/vulkan/SwapChain/SwapchainChooser.cpp.o: \
   /Users/albaud/Documents/Programation/scop/src/vulkan/Surface/Surface.hpp \
   /Users/albaud/Documents/Programation/scop/src/shaders/Uniform/Uniform.hpp \
   /Users/albaud/Documents/Programation/scop/src/vulkan/VImage/VImage.hpp \
+  /Users/albaud/Documents/Programation/scop/src/vulkan/ImageView/ImageView.hpp \
   /Users/albaud/Documents/Programation/scop/src/vulkan/CommandBuffer/SingleUseCommandBuffer.hpp \
   /Users/albaud/Documents/Programation/scop/src/vulkan/QueueFamilyIndices/QueueFamilyIndices.hpp \
   /Users/albaud/Documents/Programation/scop/src/vulkan/ValidationLayers/ValidationLayers.hpp \
@@ -1028,5 +1029,6 @@ CMakeFiles/scop.dir/src/vulkan/SwapChain/SwapchainChooser.cpp.o: \
   /Users/albaud/Documents/Programation/scop/src/vulkan/Device/Device.hpp \
   /Users/albaud/Documents/Programation/scop/src/vulkan/Instance/Instance.hpp \
   /Users/albaud/Documents/Programation/scop/src/vulkan/Buffer/Buffer.hpp \
+  /Users/albaud/Documents/Programation/scop/src/vulkan/SwapChain/../VImage/VImage.hpp \
   /Users/albaud/Documents/Programation/scop/src/vulkan/SwapChain/../Pipeline/Pipeline.hpp \
   /Users/albaud/Documents/Programation/scop/src/vulkan/SwapChain/../Pipeline/../SwapChain/SwapChain.hpp
