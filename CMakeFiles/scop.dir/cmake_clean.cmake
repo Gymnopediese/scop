@@ -1,0 +1,43 @@
+file(REMOVE_RECURSE
+  "CMakeFiles/scop.dir/src/image/PPM.cpp.o"
+  "CMakeFiles/scop.dir/src/image/PPM.cpp.o.d"
+  "CMakeFiles/scop.dir/src/main.cpp.o"
+  "CMakeFiles/scop.dir/src/main.cpp.o.d"
+  "CMakeFiles/scop.dir/src/utils.cpp.o"
+  "CMakeFiles/scop.dir/src/utils.cpp.o.d"
+  "CMakeFiles/scop.dir/src/vulkan/Buffer/Buffer.cpp.o"
+  "CMakeFiles/scop.dir/src/vulkan/Buffer/Buffer.cpp.o.d"
+  "CMakeFiles/scop.dir/src/vulkan/CommandBuffer/SingleUseCommandBuffer.cpp.o"
+  "CMakeFiles/scop.dir/src/vulkan/CommandBuffer/SingleUseCommandBuffer.cpp.o.d"
+  "CMakeFiles/scop.dir/src/vulkan/Device/Decive.cpp.o"
+  "CMakeFiles/scop.dir/src/vulkan/Device/Decive.cpp.o.d"
+  "CMakeFiles/scop.dir/src/vulkan/Instance/Instance.cpp.o"
+  "CMakeFiles/scop.dir/src/vulkan/Instance/Instance.cpp.o.d"
+  "CMakeFiles/scop.dir/src/vulkan/PhysicalDevice/PhysicalDevice.cpp.o"
+  "CMakeFiles/scop.dir/src/vulkan/PhysicalDevice/PhysicalDevice.cpp.o.d"
+  "CMakeFiles/scop.dir/src/vulkan/Pipeline/Pipeline.cpp.o"
+  "CMakeFiles/scop.dir/src/vulkan/Pipeline/Pipeline.cpp.o.d"
+  "CMakeFiles/scop.dir/src/vulkan/QueueFamilyIndices/QueueFamilyIndices.cpp.o"
+  "CMakeFiles/scop.dir/src/vulkan/QueueFamilyIndices/QueueFamilyIndices.cpp.o.d"
+  "CMakeFiles/scop.dir/src/vulkan/RenderPass.cpp.o"
+  "CMakeFiles/scop.dir/src/vulkan/RenderPass.cpp.o.d"
+  "CMakeFiles/scop.dir/src/vulkan/Surface/Surface.cpp.o"
+  "CMakeFiles/scop.dir/src/vulkan/Surface/Surface.cpp.o.d"
+  "CMakeFiles/scop.dir/src/vulkan/SwapChain/SwapChain.cpp.o"
+  "CMakeFiles/scop.dir/src/vulkan/SwapChain/SwapChain.cpp.o.d"
+  "CMakeFiles/scop.dir/src/vulkan/SwapChain/SwapchainChooser.cpp.o"
+  "CMakeFiles/scop.dir/src/vulkan/SwapChain/SwapchainChooser.cpp.o.d"
+  "CMakeFiles/scop.dir/src/vulkan/VImage/VImage.cpp.o"
+  "CMakeFiles/scop.dir/src/vulkan/VImage/VImage.cpp.o.d"
+  "CMakeFiles/scop.dir/src/vulkan/ValidationLayers/ValidationLayers.cpp.o"
+  "CMakeFiles/scop.dir/src/vulkan/ValidationLayers/ValidationLayers.cpp.o.d"
+  "CMakeFiles/scop.dir/src/vulkan/Window/Window.cpp.o"
+  "CMakeFiles/scop.dir/src/vulkan/Window/Window.cpp.o.d"
+  "scop"
+  "scop.pdb"
+)
+
+# Per-language clean rules from dependency scanning.
+foreach(lang CXX)
+  include(CMakeFiles/scop.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()
