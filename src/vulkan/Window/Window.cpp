@@ -14,7 +14,9 @@ Window::Window(VulkanContext &ctx) {
     glfwSetWindowUserPointer(window, this);
     glfwSetFramebufferSizeCallback(window, framebufferResizeCallback);
 
-    ctx.window = window;
+    ctx.window = this;
+
+    std::cout << "[Window] DONE" << std::endl;
 }
     
 

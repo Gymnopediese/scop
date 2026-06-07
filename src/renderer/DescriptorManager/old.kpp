@@ -1,0 +1,227 @@
+
+#include "DescriptorManager.hpp"
+#include "main.hpp"
+#include "vulkan/vulkan_core.h"
+
+DescriptorManager::DescriptorManager(VulkanContext &ctx) : ctx(ctx)
+{
+    std::cout << "[DESCRIPTORMANAGE] c'est mon tour !" << std::endl;
+    createDescriptorSetLayout();
+    std::cout << "[DESCRIPTORMANAGE] LAYOUTE DONE" << std::endl;
+    createDescriptorPool();
+    std::cout << "[DESCRIPTORMANAGE] DESCRIPTOR POOL DONE" << std::endl;
+
+    createCameraData();
+    std::cout << "[DESCRIPTORMANAGE] CAMERA SET DONE" << std::endl;
+    createObjectsData();
+    std::cout << "[DESCRIPTORMANAGE] OBJECT SET DONE" << std::endl;
+    createTexturesData();
+    std::cout << "[DESCRIPTORMANAGE] TEXTURE SET DONE" << std::endl;
+
+    ctx.descriptorSetLayout = &descriptorSetLayout;
+    std::cout << "[DESCRIPTORMANAGE] DONE" << std::endl;
+}
+
+
+void DescriptorManager::createDescriptorPool() {
+
+    std::array<VkDescriptorPoolSize, 2> poolSizes{};
+    poolSizes[0].type = VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER;
+    poolSizes[0].descriptorCount = 100;
+
+    poolSizes[1].type = VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER;
+    poolSizes[1].descriptorCount = MAX_TEXTURES;
+
+    VkDescriptorPoolCreateInfo poolInfo{};
+    poolInfo.sType = VK_STRUCTURE_TYPE_DESCRIPTOR_POOL_CREATE_INFO;
+    poolInfo.poolSizeCount = static_cast<uint32_t>(poolSizes.size());
+    poolInfo.pPoolSizes = poolSizes.data();
+
+    poolInfo.maxSets = 1 + 2 * MAX_FRAMES_IN_FLIGHT;
+    
+    if (vkCreateDescriptorPool(*ctx.device, &poolInfo, nullptr, &descriptorPool) != VK_SUCCESS) {
+        throw std::runtime_error("echec de la creation de la pool de descripteurs!");
+    }
+
+
+}
+
+void DescriptorManager::createDescriptorSetLayout()
+{
+    // Binding 0 → Camera (UBO or SSBO)
+    VkDescriptorSetLayoutBinding camera{};
+    camera.binding = 0;
+    camera.descriptorType = VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER;
+    camera.descriptorCount = 1;
+    camera.stageFlags = VK_SHADER_STAGE_VERTEX_BIT | VK_SHADER_STAGE_FRAGMENT_BIT;
+
+    // Binding 1 → Object buffer (ALL transforms in one SSBO)
+    VkDescriptorSetLayoutBinding objects{};
+    objects.binding = 1;
+    objects.descriptorType = VK_DESCRIPTOR_TYPE_STORAGE_BUFFER;
+    objects.descriptorCount = 1;
+    objects.stageFlags = VK_SHADER_STAGE_VERTEX_BIT;
+
+    // Binding 2 → Bindless textures
+    VkDescriptorSetLayoutBinding textures{};
+    textures.binding = 2;
+    textures.descriptorType = VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER;
+
+    textures.descriptorCount = MAX_TEXTURES; // IMPORTANT
+    textures.stageFlags = VK_SHADER_STAGE_FRAGMENT_BIT;
+
+    VkDescriptorBindingFlags bindlessFlags =
+        VK_DESCRIPTOR_BINDING_PARTIALLY_BOUND_BIT |
+        VK_DESCRIPTOR_BINDING_VARIABLE_DESCRIPTOR_COUNT_BIT;
+
+    VkDescriptorSetLayoutBindingFlagsCreateInfo flagsInfo{};
+    flagsInfo.sType = VK_STRUCTURE_TYPE_DESCRIPTOR_SET_LAYOUT_BINDING_FLAGS_CREATE_INFO;
+    flagsInfo.bindingCount = 3;
+    flagsInfo.pBindingFlags = &bindlessFlags;
+
+    std::array<VkDescriptorSetLayoutBinding, 3> bindings = {
+        camera,
+        objects,
+        textures
+    };
+
+    VkDescriptorSetLayoutCreateInfo layoutInfo{};
+    layoutInfo.sType = VK_STRUCTURE_TYPE_DESCRIPTOR_SET_LAYOUT_CREATE_INFO;
+    layoutInfo.bindingCount = (uint32_t)bindings.size();
+    layoutInfo.pBindings = bindings.data();
+    layoutInfo.pNext = &flagsInfo;
+
+
+    if (vkCreateDescriptorSetLayout(*ctx.device, &layoutInfo, nullptr, &descriptorSetLayout) != VK_SUCCESS) {
+        throw std::runtime_error("echec de la creation d'un set de descripteurs!");
+    }
+}
+
+void DescriptorManager::createTexturesData()
+{
+    VkDescriptorSetAllocateInfo allocInfo{};
+    allocInfo.sType = VK_STRUCTURE_TYPE_DESCRIPTOR_SET_ALLOCATE_INFO;
+    allocInfo.descriptorPool = descriptorPool;
+    allocInfo.descriptorSetCount = 1;
+    allocInfo.pSetLayouts = &descriptorSetLayout;
+
+    if (vkAllocateDescriptorSets(*ctx.device, &allocInfo, &texturesSet) != VK_SUCCESS) {
+        throw std::runtime_error("failed to allocate bindless descriptor set");
+    }
+}
+
+void DescriptorManager::createCameraData()
+{
+    cameraSets.resize(MAX_FRAMES_IN_FLIGHT);
+
+    std::vector<VkDescriptorSetLayout> layouts(
+        MAX_FRAMES_IN_FLIGHT,
+        descriptorSetLayout
+    );
+
+    VkDescriptorSetAllocateInfo allocInfo{};
+    allocInfo.sType = VK_STRUCTURE_TYPE_DESCRIPTOR_SET_ALLOCATE_INFO;
+    allocInfo.descriptorPool = descriptorPool;
+    allocInfo.descriptorSetCount = MAX_FRAMES_IN_FLIGHT;
+    allocInfo.pSetLayouts = layouts.data();
+    std::cout << "ah ouais il phase ici" << std::endl;
+    if (vkAllocateDescriptorSets(*ctx.device, &allocInfo, cameraSets.data()) != VK_SUCCESS) {
+        throw std::runtime_error("failed to allocate camera descriptor sets");
+    }
+}
+
+void DescriptorManager::createObjectsData()
+{
+    cameraSets.resize(MAX_FRAMES_IN_FLIGHT);
+
+    std::vector<VkDescriptorSetLayout> layouts(
+        MAX_FRAMES_IN_FLIGHT,
+        descriptorSetLayout
+    );
+
+    VkDescriptorSetAllocateInfo allocInfo{};
+    allocInfo.sType = VK_STRUCTURE_TYPE_DESCRIPTOR_SET_ALLOCATE_INFO;
+    allocInfo.descriptorPool = descriptorPool;
+    allocInfo.descriptorSetCount = MAX_FRAMES_IN_FLIGHT;
+    allocInfo.pSetLayouts = layouts.data();
+
+    if (vkAllocateDescriptorSets(*ctx.device, &allocInfo, objectSets.data()) != VK_SUCCESS) {
+        throw std::runtime_error("failed to allocate camera descriptor sets");
+    }
+}
+
+
+void DescriptorManager::bindCameraBuffers(std::vector<Buffer*>& cameraBuffers)
+{
+    for (uint32_t i = 0; i < MAX_FRAMES_IN_FLIGHT; i++)
+    {
+        VkDescriptorBufferInfo bufferInfo{};
+        bufferInfo.buffer = cameraBuffers[i]->buffer;
+        bufferInfo.offset = 0;
+        bufferInfo.range  = sizeof(CameraBufferObject);
+
+        VkWriteDescriptorSet write{};
+        write.sType = VK_STRUCTURE_TYPE_WRITE_DESCRIPTOR_SET;
+        write.dstSet = cameraSets[i];
+        write.dstBinding = 0; // camera binding
+        write.descriptorType = VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER;
+        write.descriptorCount = 1;
+        write.pBufferInfo = &bufferInfo;
+
+        vkUpdateDescriptorSets(*ctx.device, 1, &write, 0, nullptr);
+    }
+}
+
+void DescriptorManager::bindTextureData(std::vector<Texture*> &textures)
+{
+    std::vector<VkDescriptorImageInfo> imageInfos;
+    imageInfos.resize(textures.size());
+
+    for (size_t i = 0; i < textures.size(); i++) {
+        imageInfos[i].imageLayout = VK_IMAGE_LAYOUT_SHADER_READ_ONLY_OPTIMAL;
+        imageInfos[i].imageView   = textures[i]->image->textureImageView->imageView;
+        imageInfos[i].sampler     = textures[i]->sampler->textureSampler;
+    }
+
+    VkWriteDescriptorSet write{};
+    write.sType = VK_STRUCTURE_TYPE_WRITE_DESCRIPTOR_SET;
+    write.dstSet = texturesSet;
+    write.dstBinding = 2; // bindless texture binding
+    write.dstArrayElement = 0;
+    write.descriptorType = VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER;
+    write.descriptorCount = static_cast<uint32_t>(imageInfos.size());
+    write.pImageInfo = imageInfos.data();
+
+    vkUpdateDescriptorSets(*ctx.device, 1, &write, 0, nullptr);
+}
+
+void DescriptorManager::bindObjectBuffers(std::vector<Buffer*> &objectBuffers)
+{
+    for (uint32_t i = 0; i < MAX_FRAMES_IN_FLIGHT; i++)
+    {
+        VkDescriptorBufferInfo bufferInfo{};
+        bufferInfo.buffer = objectBuffers[i]->buffer;
+        bufferInfo.offset = 0;
+        bufferInfo.range  = sizeof(Transform3D) * MAX_OBJECTS;
+
+        VkWriteDescriptorSet write{};
+        write.sType = VK_STRUCTURE_TYPE_WRITE_DESCRIPTOR_SET;
+        write.dstSet = objectSets[i];
+        write.dstBinding = 1; // objects binding
+        write.descriptorType = VK_DESCRIPTOR_TYPE_STORAGE_BUFFER;
+        write.descriptorCount = 1;
+        write.pBufferInfo = &bufferInfo;
+
+        vkUpdateDescriptorSets(*ctx.device, 1, &write, 0, nullptr);
+    }
+}
+
+DescriptorManager::~DescriptorManager()
+
+{
+
+    vkDestroyDescriptorSetLayout(*ctx.device, descriptorSetLayout, nullptr);
+    vkDestroyDescriptorPool(*ctx.device, descriptorPool, nullptr);
+
+
+}

@@ -1,41 +1,25 @@
 #pragma once
 
-#include "main.hpp"
-// #include "../Pipeline/Pipeline.hpp"
+#include "vulkan/VulkanContext.hpp"
 
-#include "../VImage/VImage.hpp"
-
-#include "../Pipeline/Pipeline.hpp"
-
-
-
-class Pipeline;
-
-VkSurfaceFormatKHR  chooseSwapSurfaceFormat(const std::vector<VkSurfaceFormatKHR>& availableFormats);
-VkPresentModeKHR    chooseSwapPresentMode(const std::vector<VkPresentModeKHR> &availablePresentModes);
-VkExtent2D  chooseSwapExtent(const VkSurfaceCapabilitiesKHR& capabilities, VulkanContext &ctx);
-
+VkSurfaceFormatKHR      chooseSwapSurfaceFormat(const std::vector<VkSurfaceFormatKHR>& availableFormats);
+VkPresentModeKHR        chooseSwapPresentMode(const std::vector<VkPresentModeKHR> &availablePresentModes);
+VkExtent2D              chooseSwapExtent(const VkSurfaceCapabilitiesKHR& capabilities, VulkanContext &ctx);
 SwapChainSupportDetails querySwapChainSupport(VkPhysicalDevice device, VulkanContext &ctx);
 
 
 class SwapChain {
 
     public:
-        VImage                          *image;
-        Buffer                          *vertexBuffer;
-        Buffer                          *indexBuffer;
-        std::vector<Buffer*>             uniformBuffers;
 
-        VkDescriptorPool                descriptorPool;
-        std::vector<VkDescriptorSet>    descriptorSets;
 
-        VkDescriptorSetLayout           descriptorSetLayout;
+        VkSwapchainKHR              swapChain;   
+        VkFormat                    swapChainImageFormat;
+        VkExtent2D                  swapChainExtent;
 
-        VkSwapchainKHR                  swapChain;
-        VkExtent2D                      swapChainExtent;
-        VkRenderPass                    renderPass;
-        std::vector<VkImage>            swapChainImages;
-        std::vector<VkCommandBuffer>    commandBuffers;
+        std::vector<VkImage>        swapChainImages;
+        std::vector<VkImageView>    swapChainImageViews;
+
         SwapChain(VulkanContext &ctx);
         ~SwapChain();
 
@@ -45,24 +29,9 @@ class SwapChain {
 
         void createSwapChain();
         void createImageViews();
-        void createDescriptorSetLayout();
-        void createCommandBuffers();
-        void createCommandPool();
-        void createFramebuffers();
-        void createRenderPass();
-        void createVertexBuffer();
-        void createIndexBuffer();
 
-        void createUniformBuffers();
-        void createDescriptorPool();
-        void createDescriptorSets();
     
     private:
         VulkanContext                   &ctx;
-        VkFormat                        swapChainImageFormat;
-        std::vector<ImageView*>         swapChainImageViews;
-        std::vector<VkFramebuffer>      swapChainFramebuffers;
-        VkCommandPool                   commandPool;
-        Pipeline                        *pipeline;
 
 };

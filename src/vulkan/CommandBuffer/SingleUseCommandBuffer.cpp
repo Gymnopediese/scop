@@ -1,10 +1,10 @@
 #include "SingleUseCommandBuffer.hpp"
 
-SingleUseCommandBuffer::SingleUseCommandBuffer(VulkanContext &ctx, VkCommandPool &commandPool) : ctx(ctx), commandPool(commandPool) {
+SingleUseCommandBuffer::SingleUseCommandBuffer(VulkanContext &ctx) : ctx(ctx) {
     VkCommandBufferAllocateInfo allocInfo{};
     allocInfo.sType = VK_STRUCTURE_TYPE_COMMAND_BUFFER_ALLOCATE_INFO;
     allocInfo.level = VK_COMMAND_BUFFER_LEVEL_PRIMARY;
-    allocInfo.commandPool = commandPool;
+    allocInfo.commandPool = *ctx.commandPool;
     allocInfo.commandBufferCount = 1;
 
     vkAllocateCommandBuffers(*ctx.device, &allocInfo, &commandBuffer);
@@ -28,5 +28,5 @@ SingleUseCommandBuffer::~SingleUseCommandBuffer() {
     vkQueueSubmit(*ctx.graphicsQueue, 1, &submitInfo, VK_NULL_HANDLE);
     vkQueueWaitIdle(*ctx.graphicsQueue);
 
-    vkFreeCommandBuffers(*ctx.device, commandPool, 1, &commandBuffer);
+    vkFreeCommandBuffers(*ctx.device, *ctx.commandPool, 1, &commandBuffer);
 }

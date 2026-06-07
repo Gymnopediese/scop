@@ -1,16 +1,15 @@
 #pragma once
 
-#include "main.hpp"
+#include "vulkan/VulkanContext.hpp"
 
 class SingleUseCommandBuffer
 {
 public:
     VkCommandBuffer                commandBuffer;
 
-    SingleUseCommandBuffer(VulkanContext &ctx, VkCommandPool &commandPool);
+    SingleUseCommandBuffer(VulkanContext &ctx);
     ~SingleUseCommandBuffer();
     
 private:
     VulkanContext &ctx;
-    VkCommandPool &commandPool;
 };

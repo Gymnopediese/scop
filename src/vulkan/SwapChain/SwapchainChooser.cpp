@@ -24,7 +24,7 @@ VkExtent2D  chooseSwapExtent(const VkSurfaceCapabilitiesKHR& capabilities, Vulka
         return capabilities.currentExtent;
     } else {
         int width, height;
-        glfwGetFramebufferSize(ctx.window, &width, &height);
+        glfwGetFramebufferSize(ctx.window->window, &width, &height);
 
         VkExtent2D actualExtent = {
             static_cast<uint32_t>(width),

@@ -2,6 +2,7 @@ CMakeFiles/scop.dir/src/vulkan/Pipeline/Pipeline.cpp.o: \
   /Users/albaud/Documents/Programation/scop/src/vulkan/Pipeline/Pipeline.cpp \
   /Users/albaud/Documents/Programation/scop/src/vulkan/Pipeline/Pipeline.hpp \
   /Users/albaud/Documents/Programation/scop/src/main.hpp \
+  /Users/albaud/Documents/Programation/scop/src/lib.hpp \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/iostream \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__assert \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__config \
@@ -835,7 +836,6 @@ CMakeFiles/scop.dir/src/vulkan/Pipeline/Pipeline.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks/OpenGL.framework/Headers/gltypes.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks/OpenGL.framework/Headers/OpenGLAvailability.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/os/availability.h \
-  /Users/albaud/Documents/Programation/scop/src/math/Vertex/Vertex.hpp \
   /opt/homebrew/opt/glm/include/glm/glm.hpp \
   /opt/homebrew/opt/glm/include/glm/detail/_fixes.hpp \
   /opt/homebrew/opt/glm/include/glm/detail/setup.hpp \
@@ -1015,20 +1015,16 @@ CMakeFiles/scop.dir/src/vulkan/Pipeline/Pipeline.cpp.o: \
   /opt/homebrew/opt/glm/include/glm/gtc/../geometric.hpp \
   /opt/homebrew/opt/glm/include/glm/gtc/../trigonometric.hpp \
   /opt/homebrew/opt/glm/include/glm/gtc/../matrix.hpp \
-  /Users/albaud/Documents/Programation/scop/src/utils.hpp \
-  /Users/albaud/Documents/Programation/scop/src/image/PPM.hpp \
+  /Users/albaud/Documents/Programation/scop/src/vulkan/VulkanContext.hpp \
   /Users/albaud/Documents/Programation/scop/src/vulkan/Window/Window.hpp \
-  /Users/albaud/Documents/Programation/scop/src/vulkan/Surface/Surface.hpp \
-  /Users/albaud/Documents/Programation/scop/src/shaders/Uniform/Uniform.hpp \
-  /Users/albaud/Documents/Programation/scop/src/vulkan/VImage/VImage.hpp \
-  /Users/albaud/Documents/Programation/scop/src/vulkan/ImageView/ImageView.hpp \
+  /Users/albaud/Documents/Programation/scop/src/vulkan/SwapChain/SwapChain.hpp \
   /Users/albaud/Documents/Programation/scop/src/vulkan/CommandBuffer/SingleUseCommandBuffer.hpp \
   /Users/albaud/Documents/Programation/scop/src/vulkan/QueueFamilyIndices/QueueFamilyIndices.hpp \
-  /Users/albaud/Documents/Programation/scop/src/vulkan/ValidationLayers/ValidationLayers.hpp \
-  /Users/albaud/Documents/Programation/scop/src/vulkan/PhysicalDevice/PhysicalDevice.hpp \
-  /Users/albaud/Documents/Programation/scop/src/vulkan/Device/Device.hpp \
-  /Users/albaud/Documents/Programation/scop/src/vulkan/Instance/Instance.hpp \
-  /Users/albaud/Documents/Programation/scop/src/vulkan/Buffer/Buffer.hpp \
-  /Users/albaud/Documents/Programation/scop/src/vulkan/Pipeline/../SwapChain/SwapChain.hpp \
-  /Users/albaud/Documents/Programation/scop/src/vulkan/Pipeline/../SwapChain/../VImage/VImage.hpp \
-  /Users/albaud/Documents/Programation/scop/src/vulkan/Pipeline/../SwapChain/../Pipeline/Pipeline.hpp
+  /Users/albaud/Documents/Programation/scop/src/vulkan/Inputs/Inputs.hpp \
+  /Users/albaud/Documents/Programation/scop/src/vulkan/Inputs/InputEvent.hpp \
+  /Users/albaud/Documents/Programation/scop/src/math/Vertex/Vertex.hpp \
+  /Users/albaud/Documents/Programation/scop/src/utils.hpp \
+  /Users/albaud/Documents/Programation/scop/src/loader/PPM.hpp \
+  /Users/albaud/Documents/Programation/scop/src/shaders/Uniform/Camera.hpp \
+  /Users/albaud/Documents/Programation/scop/src/shaders/Uniform/Object.hpp \
+  /Users/albaud/Documents/Programation/scop/src/vulkan/Pipeline/../SwapChain/SwapChain.hpp

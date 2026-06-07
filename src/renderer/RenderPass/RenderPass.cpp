@@ -1,0 +1,151 @@
+#include "RenderPass.hpp"
+#include "vulkan/VulkanContext.hpp"
+#include "vulkan/vulkan_core.h"
+
+RenderPass::RenderPass(VulkanContext & ctx) : ctx(ctx) {
+    renderPass = VK_NULL_HANDLE;
+}
+
+RenderPass *RenderPass::preProcessPass(VulkanContext & ctx)
+{
+
+    RenderPass *pass = new RenderPass(ctx);
+
+    VkAttachmentDescription colorAttachment{};
+
+    colorAttachment.format = ctx.swapChain->swapChainImageFormat;
+    colorAttachment.samples = VK_SAMPLE_COUNT_1_BIT;
+
+    colorAttachment.loadOp = VK_ATTACHMENT_LOAD_OP_CLEAR;
+    colorAttachment.storeOp = VK_ATTACHMENT_STORE_OP_STORE;
+
+    colorAttachment.stencilLoadOp = VK_ATTACHMENT_LOAD_OP_DONT_CARE;
+    colorAttachment.stencilStoreOp = VK_ATTACHMENT_STORE_OP_DONT_CARE;
+
+    colorAttachment.initialLayout = VK_IMAGE_LAYOUT_UNDEFINED;
+    colorAttachment.finalLayout = VK_IMAGE_LAYOUT_SHADER_READ_ONLY_OPTIMAL;
+    
+    VkAttachmentDescription depthAttachment{};
+    depthAttachment.format = findDepthFormat(ctx);
+    depthAttachment.samples = VK_SAMPLE_COUNT_1_BIT;
+    depthAttachment.loadOp = VK_ATTACHMENT_LOAD_OP_CLEAR;
+    depthAttachment.storeOp = VK_ATTACHMENT_STORE_OP_DONT_CARE;
+    depthAttachment.stencilLoadOp = VK_ATTACHMENT_LOAD_OP_DONT_CARE;
+    depthAttachment.stencilStoreOp = VK_ATTACHMENT_STORE_OP_DONT_CARE;
+    depthAttachment.initialLayout = VK_IMAGE_LAYOUT_UNDEFINED;
+    depthAttachment.finalLayout = VK_IMAGE_LAYOUT_DEPTH_STENCIL_ATTACHMENT_OPTIMAL;
+
+
+    VkAttachmentReference colorAttachmentRef{};
+    colorAttachmentRef.attachment = 0;
+    colorAttachmentRef.layout = VK_IMAGE_LAYOUT_SHADER_READ_ONLY_OPTIMAL;
+
+    VkAttachmentReference depthAttachmentRef{};
+    depthAttachmentRef.attachment = 1;
+    depthAttachmentRef.layout = VK_IMAGE_LAYOUT_DEPTH_STENCIL_ATTACHMENT_OPTIMAL;
+
+
+    VkSubpassDescription subpass{};
+    subpass.pipelineBindPoint = VK_PIPELINE_BIND_POINT_GRAPHICS;
+    subpass.colorAttachmentCount = 1;   
+    subpass.pColorAttachments = &colorAttachmentRef;  
+    subpass.pDepthStencilAttachment = &depthAttachmentRef;  
+
+
+
+    VkSubpassDependency dependency{};
+    dependency.srcSubpass = VK_SUBPASS_EXTERNAL;
+    dependency.dstSubpass = 0;
+
+    dependency.srcStageMask = VK_PIPELINE_STAGE_COLOR_ATTACHMENT_OUTPUT_BIT;
+    dependency.srcAccessMask = 0;
+
+    dependency.dstStageMask = VK_PIPELINE_STAGE_COLOR_ATTACHMENT_OUTPUT_BIT;
+    dependency.dstAccessMask = VK_ACCESS_COLOR_ATTACHMENT_WRITE_BIT;
+
+
+    std::array<VkAttachmentDescription, 2> attachments = {colorAttachment, depthAttachment};
+    VkRenderPassCreateInfo renderPassInfo{};
+    renderPassInfo.sType = VK_STRUCTURE_TYPE_RENDER_PASS_CREATE_INFO;
+    renderPassInfo.attachmentCount = static_cast<uint32_t>(attachments.size());
+    renderPassInfo.pAttachments = attachments.data();
+    renderPassInfo.subpassCount = 1;
+    renderPassInfo.pSubpasses = &subpass;
+    renderPassInfo.dependencyCount = 1;
+    renderPassInfo.pDependencies = &dependency;
+
+
+    if (vkCreateRenderPass(*ctx.device, &renderPassInfo, nullptr, &pass->renderPass) != VK_SUCCESS) {
+        throw std::runtime_error("échec de la création de la render pass!");
+    }
+
+    ctx.processPass = &pass->renderPass;
+
+    std::cout << "[RENDERPASS] DONE" << std::endl;
+    return pass;
+}
+
+RenderPass *RenderPass::postProcessPass(VulkanContext & ctx)
+{
+
+    RenderPass *pass = new RenderPass(ctx);
+
+    VkAttachmentDescription colorAttachment{};
+    colorAttachment.format = ctx.swapChain->swapChainImageFormat;
+    colorAttachment.samples = VK_SAMPLE_COUNT_1_BIT;
+    colorAttachment.loadOp = VK_ATTACHMENT_LOAD_OP_CLEAR;
+    colorAttachment.storeOp = VK_ATTACHMENT_STORE_OP_STORE;
+    colorAttachment.stencilLoadOp = VK_ATTACHMENT_LOAD_OP_DONT_CARE;
+    colorAttachment.stencilStoreOp = VK_ATTACHMENT_STORE_OP_DONT_CARE;
+
+    colorAttachment.initialLayout = VK_IMAGE_LAYOUT_UNDEFINED;
+    colorAttachment.finalLayout = VK_IMAGE_LAYOUT_PRESENT_SRC_KHR; //VK_IMAGE_LAYOUT_PRESENT_SRC_KHR;
+
+    VkAttachmentReference colorRef{};
+    colorRef.attachment = 0;
+    colorRef.layout = VK_IMAGE_LAYOUT_COLOR_ATTACHMENT_OPTIMAL;
+        
+
+
+
+    VkSubpassDescription subpass{};
+    subpass.pipelineBindPoint = VK_PIPELINE_BIND_POINT_GRAPHICS;
+    subpass.colorAttachmentCount = 1;
+    subpass.pColorAttachments = &colorRef;
+
+    VkSubpassDependency dep{};
+    dep.srcSubpass = VK_SUBPASS_EXTERNAL;
+    dep.dstSubpass = 0;
+
+    dep.srcStageMask = VK_PIPELINE_STAGE_COLOR_ATTACHMENT_OUTPUT_BIT;
+    dep.dstStageMask = VK_PIPELINE_STAGE_COLOR_ATTACHMENT_OUTPUT_BIT;
+
+    dep.srcAccessMask = 0;
+    dep.dstAccessMask = VK_ACCESS_COLOR_ATTACHMENT_WRITE_BIT;
+
+    std::array<VkAttachmentDescription, 1> attachments = {colorAttachment};
+    VkRenderPassCreateInfo renderPassInfo{};
+    renderPassInfo.sType = VK_STRUCTURE_TYPE_RENDER_PASS_CREATE_INFO;
+    renderPassInfo.attachmentCount = static_cast<uint32_t>(attachments.size());
+    renderPassInfo.pAttachments = attachments.data();
+    renderPassInfo.subpassCount = 1;
+    renderPassInfo.pSubpasses = &subpass;
+    renderPassInfo.dependencyCount = 1;
+    renderPassInfo.pDependencies = &dep;
+
+
+    if (vkCreateRenderPass(*ctx.device, &renderPassInfo, nullptr, &pass->renderPass) != VK_SUCCESS) {
+        throw std::runtime_error("échec de la création de la render pass!");
+    }
+
+    ctx.postProcessPass = &pass->renderPass;
+
+    std::cout << "[RENDERPASS] DONE" << std::endl;
+    return pass;
+}
+
+RenderPass::~RenderPass()
+{
+    if (renderPass != VK_NULL_HANDLE)
+    vkDestroyRenderPass(*ctx.device, renderPass, nullptr);
+}

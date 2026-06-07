@@ -2,6 +2,8 @@
 
 #include "main.hpp"
 
+struct VulkanContext;
+
 class Window {
 
     public:
@@ -9,7 +11,6 @@ class Window {
         
         Window(VulkanContext &ctx);
         ~Window();
-    private:
         GLFWwindow*     window;
 
 };

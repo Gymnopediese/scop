@@ -25,25 +25,33 @@ Device::Device(VulkanContext &ctx)
 
     VkPhysicalDeviceFeatures deviceFeatures{};
     deviceFeatures.samplerAnisotropy = VK_TRUE;
+    // deviceFeatures.logicOp = VK_TRUE;
+
+    VkPhysicalDeviceDescriptorIndexingFeatures indexingFeatures{};
+    indexingFeatures.sType =
+        VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_DESCRIPTOR_INDEXING_FEATURES;
+
+    indexingFeatures.descriptorBindingPartiallyBound = VK_TRUE;
+    indexingFeatures.descriptorBindingVariableDescriptorCount = VK_TRUE;
 
     VkDeviceCreateInfo createInfo{};
     createInfo.sType = VK_STRUCTURE_TYPE_DEVICE_CREATE_INFO;
+    createInfo.pNext = &indexingFeatures;
+    createInfo.pEnabledFeatures = &deviceFeatures;
 
     createInfo.queueCreateInfoCount = static_cast<uint32_t>(queueCreateInfos.size());
     createInfo.pQueueCreateInfos = queueCreateInfos.data();
-
-    createInfo.pEnabledFeatures = &deviceFeatures;
 
     createInfo.enabledExtensionCount = static_cast<uint32_t>(deviceExtensions.size());
     createInfo.ppEnabledExtensionNames = deviceExtensions.data();
 
 
-    if (enableValidationLayers) {
-        createInfo.enabledLayerCount = static_cast<uint32_t>(validationLayers.size());
-        createInfo.ppEnabledLayerNames = validationLayers.data();
-    } else {
-        createInfo.enabledLayerCount = 0;
-    }
+    // if (enableValidationLayers) {
+    //     createInfo.enabledLayerCount = static_cast<uint32_t>(validationLayers.size());
+    //     createInfo.ppEnabledLayerNames = validationLayers.data();
+    // } else {
+    //     createInfo.enabledLayerCount = 0;
+    // }
 
     if (vkCreateDevice(*ctx.physicalDevice, &createInfo, nullptr, &device) != VK_SUCCESS) {
         throw std::runtime_error("failed to create logical device!");
@@ -54,6 +62,7 @@ Device::Device(VulkanContext &ctx)
 
     ctx.device = &device;
     ctx.graphicsQueue = &graphicsQueue;
+    ctx.presentQueue = &presentQueue;
 }
 
 Device::~Device()

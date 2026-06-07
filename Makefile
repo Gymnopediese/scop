@@ -129,29 +129,101 @@ scop/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/scop.dir/build.make CMakeFiles/scop.dir/build
 .PHONY : scop/fast
 
-src/image/PPM.o: src/image/PPM.cpp.o
-.PHONY : src/image/PPM.o
+src/assets/Material/Material.o: src/assets/Material/Material.cpp.o
+.PHONY : src/assets/Material/Material.o
 
 # target to build an object file
-src/image/PPM.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/scop.dir/build.make CMakeFiles/scop.dir/src/image/PPM.cpp.o
-.PHONY : src/image/PPM.cpp.o
+src/assets/Material/Material.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/scop.dir/build.make CMakeFiles/scop.dir/src/assets/Material/Material.cpp.o
+.PHONY : src/assets/Material/Material.cpp.o
 
-src/image/PPM.i: src/image/PPM.cpp.i
-.PHONY : src/image/PPM.i
+src/assets/Material/Material.i: src/assets/Material/Material.cpp.i
+.PHONY : src/assets/Material/Material.i
 
 # target to preprocess a source file
-src/image/PPM.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/scop.dir/build.make CMakeFiles/scop.dir/src/image/PPM.cpp.i
-.PHONY : src/image/PPM.cpp.i
+src/assets/Material/Material.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/scop.dir/build.make CMakeFiles/scop.dir/src/assets/Material/Material.cpp.i
+.PHONY : src/assets/Material/Material.cpp.i
 
-src/image/PPM.s: src/image/PPM.cpp.s
-.PHONY : src/image/PPM.s
+src/assets/Material/Material.s: src/assets/Material/Material.cpp.s
+.PHONY : src/assets/Material/Material.s
 
 # target to generate assembly for a file
-src/image/PPM.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/scop.dir/build.make CMakeFiles/scop.dir/src/image/PPM.cpp.s
-.PHONY : src/image/PPM.cpp.s
+src/assets/Material/Material.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/scop.dir/build.make CMakeFiles/scop.dir/src/assets/Material/Material.cpp.s
+.PHONY : src/assets/Material/Material.cpp.s
+
+src/assets/Texture/Texture.o: src/assets/Texture/Texture.cpp.o
+.PHONY : src/assets/Texture/Texture.o
+
+# target to build an object file
+src/assets/Texture/Texture.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/scop.dir/build.make CMakeFiles/scop.dir/src/assets/Texture/Texture.cpp.o
+.PHONY : src/assets/Texture/Texture.cpp.o
+
+src/assets/Texture/Texture.i: src/assets/Texture/Texture.cpp.i
+.PHONY : src/assets/Texture/Texture.i
+
+# target to preprocess a source file
+src/assets/Texture/Texture.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/scop.dir/build.make CMakeFiles/scop.dir/src/assets/Texture/Texture.cpp.i
+.PHONY : src/assets/Texture/Texture.cpp.i
+
+src/assets/Texture/Texture.s: src/assets/Texture/Texture.cpp.s
+.PHONY : src/assets/Texture/Texture.s
+
+# target to generate assembly for a file
+src/assets/Texture/Texture.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/scop.dir/build.make CMakeFiles/scop.dir/src/assets/Texture/Texture.cpp.s
+.PHONY : src/assets/Texture/Texture.cpp.s
+
+src/loader/OBJ.o: src/loader/OBJ.cpp.o
+.PHONY : src/loader/OBJ.o
+
+# target to build an object file
+src/loader/OBJ.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/scop.dir/build.make CMakeFiles/scop.dir/src/loader/OBJ.cpp.o
+.PHONY : src/loader/OBJ.cpp.o
+
+src/loader/OBJ.i: src/loader/OBJ.cpp.i
+.PHONY : src/loader/OBJ.i
+
+# target to preprocess a source file
+src/loader/OBJ.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/scop.dir/build.make CMakeFiles/scop.dir/src/loader/OBJ.cpp.i
+.PHONY : src/loader/OBJ.cpp.i
+
+src/loader/OBJ.s: src/loader/OBJ.cpp.s
+.PHONY : src/loader/OBJ.s
+
+# target to generate assembly for a file
+src/loader/OBJ.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/scop.dir/build.make CMakeFiles/scop.dir/src/loader/OBJ.cpp.s
+.PHONY : src/loader/OBJ.cpp.s
+
+src/loader/PPM.o: src/loader/PPM.cpp.o
+.PHONY : src/loader/PPM.o
+
+# target to build an object file
+src/loader/PPM.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/scop.dir/build.make CMakeFiles/scop.dir/src/loader/PPM.cpp.o
+.PHONY : src/loader/PPM.cpp.o
+
+src/loader/PPM.i: src/loader/PPM.cpp.i
+.PHONY : src/loader/PPM.i
+
+# target to preprocess a source file
+src/loader/PPM.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/scop.dir/build.make CMakeFiles/scop.dir/src/loader/PPM.cpp.i
+.PHONY : src/loader/PPM.cpp.i
+
+src/loader/PPM.s: src/loader/PPM.cpp.s
+.PHONY : src/loader/PPM.s
+
+# target to generate assembly for a file
+src/loader/PPM.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/scop.dir/build.make CMakeFiles/scop.dir/src/loader/PPM.cpp.s
+.PHONY : src/loader/PPM.cpp.s
 
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
@@ -177,6 +249,270 @@ src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/scop.dir/build.make CMakeFiles/scop.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+src/renderer/DescriptorManager/DescriptorManager.o: src/renderer/DescriptorManager/DescriptorManager.cpp.o
+.PHONY : src/renderer/DescriptorManager/DescriptorManager.o
+
+# target to build an object file
+src/renderer/DescriptorManager/DescriptorManager.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/scop.dir/build.make CMakeFiles/scop.dir/src/renderer/DescriptorManager/DescriptorManager.cpp.o
+.PHONY : src/renderer/DescriptorManager/DescriptorManager.cpp.o
+
+src/renderer/DescriptorManager/DescriptorManager.i: src/renderer/DescriptorManager/DescriptorManager.cpp.i
+.PHONY : src/renderer/DescriptorManager/DescriptorManager.i
+
+# target to preprocess a source file
+src/renderer/DescriptorManager/DescriptorManager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/scop.dir/build.make CMakeFiles/scop.dir/src/renderer/DescriptorManager/DescriptorManager.cpp.i
+.PHONY : src/renderer/DescriptorManager/DescriptorManager.cpp.i
+
+src/renderer/DescriptorManager/DescriptorManager.s: src/renderer/DescriptorManager/DescriptorManager.cpp.s
+.PHONY : src/renderer/DescriptorManager/DescriptorManager.s
+
+# target to generate assembly for a file
+src/renderer/DescriptorManager/DescriptorManager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/scop.dir/build.make CMakeFiles/scop.dir/src/renderer/DescriptorManager/DescriptorManager.cpp.s
+.PHONY : src/renderer/DescriptorManager/DescriptorManager.cpp.s
+
+src/renderer/FrameData/FrameData.o: src/renderer/FrameData/FrameData.cpp.o
+.PHONY : src/renderer/FrameData/FrameData.o
+
+# target to build an object file
+src/renderer/FrameData/FrameData.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/scop.dir/build.make CMakeFiles/scop.dir/src/renderer/FrameData/FrameData.cpp.o
+.PHONY : src/renderer/FrameData/FrameData.cpp.o
+
+src/renderer/FrameData/FrameData.i: src/renderer/FrameData/FrameData.cpp.i
+.PHONY : src/renderer/FrameData/FrameData.i
+
+# target to preprocess a source file
+src/renderer/FrameData/FrameData.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/scop.dir/build.make CMakeFiles/scop.dir/src/renderer/FrameData/FrameData.cpp.i
+.PHONY : src/renderer/FrameData/FrameData.cpp.i
+
+src/renderer/FrameData/FrameData.s: src/renderer/FrameData/FrameData.cpp.s
+.PHONY : src/renderer/FrameData/FrameData.s
+
+# target to generate assembly for a file
+src/renderer/FrameData/FrameData.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/scop.dir/build.make CMakeFiles/scop.dir/src/renderer/FrameData/FrameData.cpp.s
+.PHONY : src/renderer/FrameData/FrameData.cpp.s
+
+src/renderer/RenderPass/RenderPass.o: src/renderer/RenderPass/RenderPass.cpp.o
+.PHONY : src/renderer/RenderPass/RenderPass.o
+
+# target to build an object file
+src/renderer/RenderPass/RenderPass.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/scop.dir/build.make CMakeFiles/scop.dir/src/renderer/RenderPass/RenderPass.cpp.o
+.PHONY : src/renderer/RenderPass/RenderPass.cpp.o
+
+src/renderer/RenderPass/RenderPass.i: src/renderer/RenderPass/RenderPass.cpp.i
+.PHONY : src/renderer/RenderPass/RenderPass.i
+
+# target to preprocess a source file
+src/renderer/RenderPass/RenderPass.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/scop.dir/build.make CMakeFiles/scop.dir/src/renderer/RenderPass/RenderPass.cpp.i
+.PHONY : src/renderer/RenderPass/RenderPass.cpp.i
+
+src/renderer/RenderPass/RenderPass.s: src/renderer/RenderPass/RenderPass.cpp.s
+.PHONY : src/renderer/RenderPass/RenderPass.s
+
+# target to generate assembly for a file
+src/renderer/RenderPass/RenderPass.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/scop.dir/build.make CMakeFiles/scop.dir/src/renderer/RenderPass/RenderPass.cpp.s
+.PHONY : src/renderer/RenderPass/RenderPass.cpp.s
+
+src/renderer/Renderer/Renderer.o: src/renderer/Renderer/Renderer.cpp.o
+.PHONY : src/renderer/Renderer/Renderer.o
+
+# target to build an object file
+src/renderer/Renderer/Renderer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/scop.dir/build.make CMakeFiles/scop.dir/src/renderer/Renderer/Renderer.cpp.o
+.PHONY : src/renderer/Renderer/Renderer.cpp.o
+
+src/renderer/Renderer/Renderer.i: src/renderer/Renderer/Renderer.cpp.i
+.PHONY : src/renderer/Renderer/Renderer.i
+
+# target to preprocess a source file
+src/renderer/Renderer/Renderer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/scop.dir/build.make CMakeFiles/scop.dir/src/renderer/Renderer/Renderer.cpp.i
+.PHONY : src/renderer/Renderer/Renderer.cpp.i
+
+src/renderer/Renderer/Renderer.s: src/renderer/Renderer/Renderer.cpp.s
+.PHONY : src/renderer/Renderer/Renderer.s
+
+# target to generate assembly for a file
+src/renderer/Renderer/Renderer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/scop.dir/build.make CMakeFiles/scop.dir/src/renderer/Renderer/Renderer.cpp.s
+.PHONY : src/renderer/Renderer/Renderer.cpp.s
+
+src/resources/Buffer/Buffer.o: src/resources/Buffer/Buffer.cpp.o
+.PHONY : src/resources/Buffer/Buffer.o
+
+# target to build an object file
+src/resources/Buffer/Buffer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/scop.dir/build.make CMakeFiles/scop.dir/src/resources/Buffer/Buffer.cpp.o
+.PHONY : src/resources/Buffer/Buffer.cpp.o
+
+src/resources/Buffer/Buffer.i: src/resources/Buffer/Buffer.cpp.i
+.PHONY : src/resources/Buffer/Buffer.i
+
+# target to preprocess a source file
+src/resources/Buffer/Buffer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/scop.dir/build.make CMakeFiles/scop.dir/src/resources/Buffer/Buffer.cpp.i
+.PHONY : src/resources/Buffer/Buffer.cpp.i
+
+src/resources/Buffer/Buffer.s: src/resources/Buffer/Buffer.cpp.s
+.PHONY : src/resources/Buffer/Buffer.s
+
+# target to generate assembly for a file
+src/resources/Buffer/Buffer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/scop.dir/build.make CMakeFiles/scop.dir/src/resources/Buffer/Buffer.cpp.s
+.PHONY : src/resources/Buffer/Buffer.cpp.s
+
+src/resources/DepthBuffer/DepthBuffer.o: src/resources/DepthBuffer/DepthBuffer.cpp.o
+.PHONY : src/resources/DepthBuffer/DepthBuffer.o
+
+# target to build an object file
+src/resources/DepthBuffer/DepthBuffer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/scop.dir/build.make CMakeFiles/scop.dir/src/resources/DepthBuffer/DepthBuffer.cpp.o
+.PHONY : src/resources/DepthBuffer/DepthBuffer.cpp.o
+
+src/resources/DepthBuffer/DepthBuffer.i: src/resources/DepthBuffer/DepthBuffer.cpp.i
+.PHONY : src/resources/DepthBuffer/DepthBuffer.i
+
+# target to preprocess a source file
+src/resources/DepthBuffer/DepthBuffer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/scop.dir/build.make CMakeFiles/scop.dir/src/resources/DepthBuffer/DepthBuffer.cpp.i
+.PHONY : src/resources/DepthBuffer/DepthBuffer.cpp.i
+
+src/resources/DepthBuffer/DepthBuffer.s: src/resources/DepthBuffer/DepthBuffer.cpp.s
+.PHONY : src/resources/DepthBuffer/DepthBuffer.s
+
+# target to generate assembly for a file
+src/resources/DepthBuffer/DepthBuffer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/scop.dir/build.make CMakeFiles/scop.dir/src/resources/DepthBuffer/DepthBuffer.cpp.s
+.PHONY : src/resources/DepthBuffer/DepthBuffer.cpp.s
+
+src/resources/Image/Image.o: src/resources/Image/Image.cpp.o
+.PHONY : src/resources/Image/Image.o
+
+# target to build an object file
+src/resources/Image/Image.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/scop.dir/build.make CMakeFiles/scop.dir/src/resources/Image/Image.cpp.o
+.PHONY : src/resources/Image/Image.cpp.o
+
+src/resources/Image/Image.i: src/resources/Image/Image.cpp.i
+.PHONY : src/resources/Image/Image.i
+
+# target to preprocess a source file
+src/resources/Image/Image.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/scop.dir/build.make CMakeFiles/scop.dir/src/resources/Image/Image.cpp.i
+.PHONY : src/resources/Image/Image.cpp.i
+
+src/resources/Image/Image.s: src/resources/Image/Image.cpp.s
+.PHONY : src/resources/Image/Image.s
+
+# target to generate assembly for a file
+src/resources/Image/Image.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/scop.dir/build.make CMakeFiles/scop.dir/src/resources/Image/Image.cpp.s
+.PHONY : src/resources/Image/Image.cpp.s
+
+src/resources/ImageView/ImageView.o: src/resources/ImageView/ImageView.cpp.o
+.PHONY : src/resources/ImageView/ImageView.o
+
+# target to build an object file
+src/resources/ImageView/ImageView.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/scop.dir/build.make CMakeFiles/scop.dir/src/resources/ImageView/ImageView.cpp.o
+.PHONY : src/resources/ImageView/ImageView.cpp.o
+
+src/resources/ImageView/ImageView.i: src/resources/ImageView/ImageView.cpp.i
+.PHONY : src/resources/ImageView/ImageView.i
+
+# target to preprocess a source file
+src/resources/ImageView/ImageView.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/scop.dir/build.make CMakeFiles/scop.dir/src/resources/ImageView/ImageView.cpp.i
+.PHONY : src/resources/ImageView/ImageView.cpp.i
+
+src/resources/ImageView/ImageView.s: src/resources/ImageView/ImageView.cpp.s
+.PHONY : src/resources/ImageView/ImageView.s
+
+# target to generate assembly for a file
+src/resources/ImageView/ImageView.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/scop.dir/build.make CMakeFiles/scop.dir/src/resources/ImageView/ImageView.cpp.s
+.PHONY : src/resources/ImageView/ImageView.cpp.s
+
+src/resources/Sampler/Sampler.o: src/resources/Sampler/Sampler.cpp.o
+.PHONY : src/resources/Sampler/Sampler.o
+
+# target to build an object file
+src/resources/Sampler/Sampler.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/scop.dir/build.make CMakeFiles/scop.dir/src/resources/Sampler/Sampler.cpp.o
+.PHONY : src/resources/Sampler/Sampler.cpp.o
+
+src/resources/Sampler/Sampler.i: src/resources/Sampler/Sampler.cpp.i
+.PHONY : src/resources/Sampler/Sampler.i
+
+# target to preprocess a source file
+src/resources/Sampler/Sampler.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/scop.dir/build.make CMakeFiles/scop.dir/src/resources/Sampler/Sampler.cpp.i
+.PHONY : src/resources/Sampler/Sampler.cpp.i
+
+src/resources/Sampler/Sampler.s: src/resources/Sampler/Sampler.cpp.s
+.PHONY : src/resources/Sampler/Sampler.s
+
+# target to generate assembly for a file
+src/resources/Sampler/Sampler.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/scop.dir/build.make CMakeFiles/scop.dir/src/resources/Sampler/Sampler.cpp.s
+.PHONY : src/resources/Sampler/Sampler.cpp.s
+
+src/scene/Camera3D/Camera3D.o: src/scene/Camera3D/Camera3D.cpp.o
+.PHONY : src/scene/Camera3D/Camera3D.o
+
+# target to build an object file
+src/scene/Camera3D/Camera3D.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/scop.dir/build.make CMakeFiles/scop.dir/src/scene/Camera3D/Camera3D.cpp.o
+.PHONY : src/scene/Camera3D/Camera3D.cpp.o
+
+src/scene/Camera3D/Camera3D.i: src/scene/Camera3D/Camera3D.cpp.i
+.PHONY : src/scene/Camera3D/Camera3D.i
+
+# target to preprocess a source file
+src/scene/Camera3D/Camera3D.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/scop.dir/build.make CMakeFiles/scop.dir/src/scene/Camera3D/Camera3D.cpp.i
+.PHONY : src/scene/Camera3D/Camera3D.cpp.i
+
+src/scene/Camera3D/Camera3D.s: src/scene/Camera3D/Camera3D.cpp.s
+.PHONY : src/scene/Camera3D/Camera3D.s
+
+# target to generate assembly for a file
+src/scene/Camera3D/Camera3D.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/scop.dir/build.make CMakeFiles/scop.dir/src/scene/Camera3D/Camera3D.cpp.s
+.PHONY : src/scene/Camera3D/Camera3D.cpp.s
+
+src/scene/Scene3D/Scene3D.o: src/scene/Scene3D/Scene3D.cpp.o
+.PHONY : src/scene/Scene3D/Scene3D.o
+
+# target to build an object file
+src/scene/Scene3D/Scene3D.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/scop.dir/build.make CMakeFiles/scop.dir/src/scene/Scene3D/Scene3D.cpp.o
+.PHONY : src/scene/Scene3D/Scene3D.cpp.o
+
+src/scene/Scene3D/Scene3D.i: src/scene/Scene3D/Scene3D.cpp.i
+.PHONY : src/scene/Scene3D/Scene3D.i
+
+# target to preprocess a source file
+src/scene/Scene3D/Scene3D.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/scop.dir/build.make CMakeFiles/scop.dir/src/scene/Scene3D/Scene3D.cpp.i
+.PHONY : src/scene/Scene3D/Scene3D.cpp.i
+
+src/scene/Scene3D/Scene3D.s: src/scene/Scene3D/Scene3D.cpp.s
+.PHONY : src/scene/Scene3D/Scene3D.s
+
+# target to generate assembly for a file
+src/scene/Scene3D/Scene3D.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/scop.dir/build.make CMakeFiles/scop.dir/src/scene/Scene3D/Scene3D.cpp.s
+.PHONY : src/scene/Scene3D/Scene3D.cpp.s
+
 src/utils.o: src/utils.cpp.o
 .PHONY : src/utils.o
 
@@ -200,30 +536,6 @@ src/utils.s: src/utils.cpp.s
 src/utils.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/scop.dir/build.make CMakeFiles/scop.dir/src/utils.cpp.s
 .PHONY : src/utils.cpp.s
-
-src/vulkan/Buffer/Buffer.o: src/vulkan/Buffer/Buffer.cpp.o
-.PHONY : src/vulkan/Buffer/Buffer.o
-
-# target to build an object file
-src/vulkan/Buffer/Buffer.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/scop.dir/build.make CMakeFiles/scop.dir/src/vulkan/Buffer/Buffer.cpp.o
-.PHONY : src/vulkan/Buffer/Buffer.cpp.o
-
-src/vulkan/Buffer/Buffer.i: src/vulkan/Buffer/Buffer.cpp.i
-.PHONY : src/vulkan/Buffer/Buffer.i
-
-# target to preprocess a source file
-src/vulkan/Buffer/Buffer.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/scop.dir/build.make CMakeFiles/scop.dir/src/vulkan/Buffer/Buffer.cpp.i
-.PHONY : src/vulkan/Buffer/Buffer.cpp.i
-
-src/vulkan/Buffer/Buffer.s: src/vulkan/Buffer/Buffer.cpp.s
-.PHONY : src/vulkan/Buffer/Buffer.s
-
-# target to generate assembly for a file
-src/vulkan/Buffer/Buffer.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/scop.dir/build.make CMakeFiles/scop.dir/src/vulkan/Buffer/Buffer.cpp.s
-.PHONY : src/vulkan/Buffer/Buffer.cpp.s
 
 src/vulkan/CommandBuffer/SingleUseCommandBuffer.o: src/vulkan/CommandBuffer/SingleUseCommandBuffer.cpp.o
 .PHONY : src/vulkan/CommandBuffer/SingleUseCommandBuffer.o
@@ -273,29 +585,53 @@ src/vulkan/Device/Decive.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/scop.dir/build.make CMakeFiles/scop.dir/src/vulkan/Device/Decive.cpp.s
 .PHONY : src/vulkan/Device/Decive.cpp.s
 
-src/vulkan/ImageView/ImageView.o: src/vulkan/ImageView/ImageView.cpp.o
-.PHONY : src/vulkan/ImageView/ImageView.o
+src/vulkan/Inputs/InputEvent.o: src/vulkan/Inputs/InputEvent.cpp.o
+.PHONY : src/vulkan/Inputs/InputEvent.o
 
 # target to build an object file
-src/vulkan/ImageView/ImageView.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/scop.dir/build.make CMakeFiles/scop.dir/src/vulkan/ImageView/ImageView.cpp.o
-.PHONY : src/vulkan/ImageView/ImageView.cpp.o
+src/vulkan/Inputs/InputEvent.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/scop.dir/build.make CMakeFiles/scop.dir/src/vulkan/Inputs/InputEvent.cpp.o
+.PHONY : src/vulkan/Inputs/InputEvent.cpp.o
 
-src/vulkan/ImageView/ImageView.i: src/vulkan/ImageView/ImageView.cpp.i
-.PHONY : src/vulkan/ImageView/ImageView.i
+src/vulkan/Inputs/InputEvent.i: src/vulkan/Inputs/InputEvent.cpp.i
+.PHONY : src/vulkan/Inputs/InputEvent.i
 
 # target to preprocess a source file
-src/vulkan/ImageView/ImageView.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/scop.dir/build.make CMakeFiles/scop.dir/src/vulkan/ImageView/ImageView.cpp.i
-.PHONY : src/vulkan/ImageView/ImageView.cpp.i
+src/vulkan/Inputs/InputEvent.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/scop.dir/build.make CMakeFiles/scop.dir/src/vulkan/Inputs/InputEvent.cpp.i
+.PHONY : src/vulkan/Inputs/InputEvent.cpp.i
 
-src/vulkan/ImageView/ImageView.s: src/vulkan/ImageView/ImageView.cpp.s
-.PHONY : src/vulkan/ImageView/ImageView.s
+src/vulkan/Inputs/InputEvent.s: src/vulkan/Inputs/InputEvent.cpp.s
+.PHONY : src/vulkan/Inputs/InputEvent.s
 
 # target to generate assembly for a file
-src/vulkan/ImageView/ImageView.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/scop.dir/build.make CMakeFiles/scop.dir/src/vulkan/ImageView/ImageView.cpp.s
-.PHONY : src/vulkan/ImageView/ImageView.cpp.s
+src/vulkan/Inputs/InputEvent.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/scop.dir/build.make CMakeFiles/scop.dir/src/vulkan/Inputs/InputEvent.cpp.s
+.PHONY : src/vulkan/Inputs/InputEvent.cpp.s
+
+src/vulkan/Inputs/Inputs.o: src/vulkan/Inputs/Inputs.cpp.o
+.PHONY : src/vulkan/Inputs/Inputs.o
+
+# target to build an object file
+src/vulkan/Inputs/Inputs.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/scop.dir/build.make CMakeFiles/scop.dir/src/vulkan/Inputs/Inputs.cpp.o
+.PHONY : src/vulkan/Inputs/Inputs.cpp.o
+
+src/vulkan/Inputs/Inputs.i: src/vulkan/Inputs/Inputs.cpp.i
+.PHONY : src/vulkan/Inputs/Inputs.i
+
+# target to preprocess a source file
+src/vulkan/Inputs/Inputs.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/scop.dir/build.make CMakeFiles/scop.dir/src/vulkan/Inputs/Inputs.cpp.i
+.PHONY : src/vulkan/Inputs/Inputs.cpp.i
+
+src/vulkan/Inputs/Inputs.s: src/vulkan/Inputs/Inputs.cpp.s
+.PHONY : src/vulkan/Inputs/Inputs.s
+
+# target to generate assembly for a file
+src/vulkan/Inputs/Inputs.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/scop.dir/build.make CMakeFiles/scop.dir/src/vulkan/Inputs/Inputs.cpp.s
+.PHONY : src/vulkan/Inputs/Inputs.cpp.s
 
 src/vulkan/Instance/Instance.o: src/vulkan/Instance/Instance.cpp.o
 .PHONY : src/vulkan/Instance/Instance.o
@@ -393,30 +729,6 @@ src/vulkan/QueueFamilyIndices/QueueFamilyIndices.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/scop.dir/build.make CMakeFiles/scop.dir/src/vulkan/QueueFamilyIndices/QueueFamilyIndices.cpp.s
 .PHONY : src/vulkan/QueueFamilyIndices/QueueFamilyIndices.cpp.s
 
-src/vulkan/RenderPass.o: src/vulkan/RenderPass.cpp.o
-.PHONY : src/vulkan/RenderPass.o
-
-# target to build an object file
-src/vulkan/RenderPass.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/scop.dir/build.make CMakeFiles/scop.dir/src/vulkan/RenderPass.cpp.o
-.PHONY : src/vulkan/RenderPass.cpp.o
-
-src/vulkan/RenderPass.i: src/vulkan/RenderPass.cpp.i
-.PHONY : src/vulkan/RenderPass.i
-
-# target to preprocess a source file
-src/vulkan/RenderPass.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/scop.dir/build.make CMakeFiles/scop.dir/src/vulkan/RenderPass.cpp.i
-.PHONY : src/vulkan/RenderPass.cpp.i
-
-src/vulkan/RenderPass.s: src/vulkan/RenderPass.cpp.s
-.PHONY : src/vulkan/RenderPass.s
-
-# target to generate assembly for a file
-src/vulkan/RenderPass.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/scop.dir/build.make CMakeFiles/scop.dir/src/vulkan/RenderPass.cpp.s
-.PHONY : src/vulkan/RenderPass.cpp.s
-
 src/vulkan/Surface/Surface.o: src/vulkan/Surface/Surface.cpp.o
 .PHONY : src/vulkan/Surface/Surface.o
 
@@ -489,30 +801,6 @@ src/vulkan/SwapChain/SwapchainChooser.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/scop.dir/build.make CMakeFiles/scop.dir/src/vulkan/SwapChain/SwapchainChooser.cpp.s
 .PHONY : src/vulkan/SwapChain/SwapchainChooser.cpp.s
 
-src/vulkan/VImage/VImage.o: src/vulkan/VImage/VImage.cpp.o
-.PHONY : src/vulkan/VImage/VImage.o
-
-# target to build an object file
-src/vulkan/VImage/VImage.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/scop.dir/build.make CMakeFiles/scop.dir/src/vulkan/VImage/VImage.cpp.o
-.PHONY : src/vulkan/VImage/VImage.cpp.o
-
-src/vulkan/VImage/VImage.i: src/vulkan/VImage/VImage.cpp.i
-.PHONY : src/vulkan/VImage/VImage.i
-
-# target to preprocess a source file
-src/vulkan/VImage/VImage.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/scop.dir/build.make CMakeFiles/scop.dir/src/vulkan/VImage/VImage.cpp.i
-.PHONY : src/vulkan/VImage/VImage.cpp.i
-
-src/vulkan/VImage/VImage.s: src/vulkan/VImage/VImage.cpp.s
-.PHONY : src/vulkan/VImage/VImage.s
-
-# target to generate assembly for a file
-src/vulkan/VImage/VImage.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/scop.dir/build.make CMakeFiles/scop.dir/src/vulkan/VImage/VImage.cpp.s
-.PHONY : src/vulkan/VImage/VImage.cpp.s
-
 src/vulkan/ValidationLayers/ValidationLayers.o: src/vulkan/ValidationLayers/ValidationLayers.cpp.o
 .PHONY : src/vulkan/ValidationLayers/ValidationLayers.o
 
@@ -570,27 +858,69 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... scop"
-	@echo "... src/image/PPM.o"
-	@echo "... src/image/PPM.i"
-	@echo "... src/image/PPM.s"
+	@echo "... src/assets/Material/Material.o"
+	@echo "... src/assets/Material/Material.i"
+	@echo "... src/assets/Material/Material.s"
+	@echo "... src/assets/Texture/Texture.o"
+	@echo "... src/assets/Texture/Texture.i"
+	@echo "... src/assets/Texture/Texture.s"
+	@echo "... src/loader/OBJ.o"
+	@echo "... src/loader/OBJ.i"
+	@echo "... src/loader/OBJ.s"
+	@echo "... src/loader/PPM.o"
+	@echo "... src/loader/PPM.i"
+	@echo "... src/loader/PPM.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/renderer/DescriptorManager/DescriptorManager.o"
+	@echo "... src/renderer/DescriptorManager/DescriptorManager.i"
+	@echo "... src/renderer/DescriptorManager/DescriptorManager.s"
+	@echo "... src/renderer/FrameData/FrameData.o"
+	@echo "... src/renderer/FrameData/FrameData.i"
+	@echo "... src/renderer/FrameData/FrameData.s"
+	@echo "... src/renderer/RenderPass/RenderPass.o"
+	@echo "... src/renderer/RenderPass/RenderPass.i"
+	@echo "... src/renderer/RenderPass/RenderPass.s"
+	@echo "... src/renderer/Renderer/Renderer.o"
+	@echo "... src/renderer/Renderer/Renderer.i"
+	@echo "... src/renderer/Renderer/Renderer.s"
+	@echo "... src/resources/Buffer/Buffer.o"
+	@echo "... src/resources/Buffer/Buffer.i"
+	@echo "... src/resources/Buffer/Buffer.s"
+	@echo "... src/resources/DepthBuffer/DepthBuffer.o"
+	@echo "... src/resources/DepthBuffer/DepthBuffer.i"
+	@echo "... src/resources/DepthBuffer/DepthBuffer.s"
+	@echo "... src/resources/Image/Image.o"
+	@echo "... src/resources/Image/Image.i"
+	@echo "... src/resources/Image/Image.s"
+	@echo "... src/resources/ImageView/ImageView.o"
+	@echo "... src/resources/ImageView/ImageView.i"
+	@echo "... src/resources/ImageView/ImageView.s"
+	@echo "... src/resources/Sampler/Sampler.o"
+	@echo "... src/resources/Sampler/Sampler.i"
+	@echo "... src/resources/Sampler/Sampler.s"
+	@echo "... src/scene/Camera3D/Camera3D.o"
+	@echo "... src/scene/Camera3D/Camera3D.i"
+	@echo "... src/scene/Camera3D/Camera3D.s"
+	@echo "... src/scene/Scene3D/Scene3D.o"
+	@echo "... src/scene/Scene3D/Scene3D.i"
+	@echo "... src/scene/Scene3D/Scene3D.s"
 	@echo "... src/utils.o"
 	@echo "... src/utils.i"
 	@echo "... src/utils.s"
-	@echo "... src/vulkan/Buffer/Buffer.o"
-	@echo "... src/vulkan/Buffer/Buffer.i"
-	@echo "... src/vulkan/Buffer/Buffer.s"
 	@echo "... src/vulkan/CommandBuffer/SingleUseCommandBuffer.o"
 	@echo "... src/vulkan/CommandBuffer/SingleUseCommandBuffer.i"
 	@echo "... src/vulkan/CommandBuffer/SingleUseCommandBuffer.s"
 	@echo "... src/vulkan/Device/Decive.o"
 	@echo "... src/vulkan/Device/Decive.i"
 	@echo "... src/vulkan/Device/Decive.s"
-	@echo "... src/vulkan/ImageView/ImageView.o"
-	@echo "... src/vulkan/ImageView/ImageView.i"
-	@echo "... src/vulkan/ImageView/ImageView.s"
+	@echo "... src/vulkan/Inputs/InputEvent.o"
+	@echo "... src/vulkan/Inputs/InputEvent.i"
+	@echo "... src/vulkan/Inputs/InputEvent.s"
+	@echo "... src/vulkan/Inputs/Inputs.o"
+	@echo "... src/vulkan/Inputs/Inputs.i"
+	@echo "... src/vulkan/Inputs/Inputs.s"
 	@echo "... src/vulkan/Instance/Instance.o"
 	@echo "... src/vulkan/Instance/Instance.i"
 	@echo "... src/vulkan/Instance/Instance.s"
@@ -603,9 +933,6 @@ help:
 	@echo "... src/vulkan/QueueFamilyIndices/QueueFamilyIndices.o"
 	@echo "... src/vulkan/QueueFamilyIndices/QueueFamilyIndices.i"
 	@echo "... src/vulkan/QueueFamilyIndices/QueueFamilyIndices.s"
-	@echo "... src/vulkan/RenderPass.o"
-	@echo "... src/vulkan/RenderPass.i"
-	@echo "... src/vulkan/RenderPass.s"
 	@echo "... src/vulkan/Surface/Surface.o"
 	@echo "... src/vulkan/Surface/Surface.i"
 	@echo "... src/vulkan/Surface/Surface.s"
@@ -615,9 +942,6 @@ help:
 	@echo "... src/vulkan/SwapChain/SwapchainChooser.o"
 	@echo "... src/vulkan/SwapChain/SwapchainChooser.i"
 	@echo "... src/vulkan/SwapChain/SwapchainChooser.s"
-	@echo "... src/vulkan/VImage/VImage.o"
-	@echo "... src/vulkan/VImage/VImage.i"
-	@echo "... src/vulkan/VImage/VImage.s"
 	@echo "... src/vulkan/ValidationLayers/ValidationLayers.o"
 	@echo "... src/vulkan/ValidationLayers/ValidationLayers.i"
 	@echo "... src/vulkan/ValidationLayers/ValidationLayers.s"

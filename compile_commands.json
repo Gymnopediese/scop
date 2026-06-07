@@ -1,0 +1,182 @@
+[
+{
+  "directory": "/Users/albaud/Documents/Programation/scop",
+  "command": "/usr/bin/c++ -DVK_USE_PLATFORM_MACOS_MVK -I/opt/homebrew/opt/glfw/include -I/Users/albaud/Documents/Programation/scop/src -I/opt/homebrew/opt/glm/include -std=gnu++17 -arch arm64 -o CMakeFiles/scop.dir/src/vulkan/SwapChain/SwapChain.cpp.o -c /Users/albaud/Documents/Programation/scop/src/vulkan/SwapChain/SwapChain.cpp",
+  "file": "/Users/albaud/Documents/Programation/scop/src/vulkan/SwapChain/SwapChain.cpp",
+  "output": "CMakeFiles/scop.dir/src/vulkan/SwapChain/SwapChain.cpp.o"
+},
+{
+  "directory": "/Users/albaud/Documents/Programation/scop",
+  "command": "/usr/bin/c++ -DVK_USE_PLATFORM_MACOS_MVK -I/opt/homebrew/opt/glfw/include -I/Users/albaud/Documents/Programation/scop/src -I/opt/homebrew/opt/glm/include -std=gnu++17 -arch arm64 -o CMakeFiles/scop.dir/src/assets/Material/Material.cpp.o -c /Users/albaud/Documents/Programation/scop/src/assets/Material/Material.cpp",
+  "file": "/Users/albaud/Documents/Programation/scop/src/assets/Material/Material.cpp",
+  "output": "CMakeFiles/scop.dir/src/assets/Material/Material.cpp.o"
+},
+{
+  "directory": "/Users/albaud/Documents/Programation/scop",
+  "command": "/usr/bin/c++ -DVK_USE_PLATFORM_MACOS_MVK -I/opt/homebrew/opt/glfw/include -I/Users/albaud/Documents/Programation/scop/src -I/opt/homebrew/opt/glm/include -std=gnu++17 -arch arm64 -o CMakeFiles/scop.dir/src/assets/Texture/Texture.cpp.o -c /Users/albaud/Documents/Programation/scop/src/assets/Texture/Texture.cpp",
+  "file": "/Users/albaud/Documents/Programation/scop/src/assets/Texture/Texture.cpp",
+  "output": "CMakeFiles/scop.dir/src/assets/Texture/Texture.cpp.o"
+},
+{
+  "directory": "/Users/albaud/Documents/Programation/scop",
+  "command": "/usr/bin/c++ -DVK_USE_PLATFORM_MACOS_MVK -I/opt/homebrew/opt/glfw/include -I/Users/albaud/Documents/Programation/scop/src -I/opt/homebrew/opt/glm/include -std=gnu++17 -arch arm64 -o CMakeFiles/scop.dir/src/loader/OBJ.cpp.o -c /Users/albaud/Documents/Programation/scop/src/loader/OBJ.cpp",
+  "file": "/Users/albaud/Documents/Programation/scop/src/loader/OBJ.cpp",
+  "output": "CMakeFiles/scop.dir/src/loader/OBJ.cpp.o"
+},
+{
+  "directory": "/Users/albaud/Documents/Programation/scop",
+  "command": "/usr/bin/c++ -DVK_USE_PLATFORM_MACOS_MVK -I/opt/homebrew/opt/glfw/include -I/Users/albaud/Documents/Programation/scop/src -I/opt/homebrew/opt/glm/include -std=gnu++17 -arch arm64 -o CMakeFiles/scop.dir/src/loader/PPM.cpp.o -c /Users/albaud/Documents/Programation/scop/src/loader/PPM.cpp",
+  "file": "/Users/albaud/Documents/Programation/scop/src/loader/PPM.cpp",
+  "output": "CMakeFiles/scop.dir/src/loader/PPM.cpp.o"
+},
+{
+  "directory": "/Users/albaud/Documents/Programation/scop",
+  "command": "/usr/bin/c++ -DVK_USE_PLATFORM_MACOS_MVK -I/opt/homebrew/opt/glfw/include -I/Users/albaud/Documents/Programation/scop/src -I/opt/homebrew/opt/glm/include -std=gnu++17 -arch arm64 -o CMakeFiles/scop.dir/src/main.cpp.o -c /Users/albaud/Documents/Programation/scop/src/main.cpp",
+  "file": "/Users/albaud/Documents/Programation/scop/src/main.cpp",
+  "output": "CMakeFiles/scop.dir/src/main.cpp.o"
+},
+{
+  "directory": "/Users/albaud/Documents/Programation/scop",
+  "command": "/usr/bin/c++ -DVK_USE_PLATFORM_MACOS_MVK -I/opt/homebrew/opt/glfw/include -I/Users/albaud/Documents/Programation/scop/src -I/opt/homebrew/opt/glm/include -std=gnu++17 -arch arm64 -o CMakeFiles/scop.dir/src/renderer/DescriptorManager/DescriptorManager.cpp.o -c /Users/albaud/Documents/Programation/scop/src/renderer/DescriptorManager/DescriptorManager.cpp",
+  "file": "/Users/albaud/Documents/Programation/scop/src/renderer/DescriptorManager/DescriptorManager.cpp",
+  "output": "CMakeFiles/scop.dir/src/renderer/DescriptorManager/DescriptorManager.cpp.o"
+},
+{
+  "directory": "/Users/albaud/Documents/Programation/scop",
+  "command": "/usr/bin/c++ -DVK_USE_PLATFORM_MACOS_MVK -I/opt/homebrew/opt/glfw/include -I/Users/albaud/Documents/Programation/scop/src -I/opt/homebrew/opt/glm/include -std=gnu++17 -arch arm64 -o CMakeFiles/scop.dir/src/renderer/FrameData/FrameData.cpp.o -c /Users/albaud/Documents/Programation/scop/src/renderer/FrameData/FrameData.cpp",
+  "file": "/Users/albaud/Documents/Programation/scop/src/renderer/FrameData/FrameData.cpp",
+  "output": "CMakeFiles/scop.dir/src/renderer/FrameData/FrameData.cpp.o"
+},
+{
+  "directory": "/Users/albaud/Documents/Programation/scop",
+  "command": "/usr/bin/c++ -DVK_USE_PLATFORM_MACOS_MVK -I/opt/homebrew/opt/glfw/include -I/Users/albaud/Documents/Programation/scop/src -I/opt/homebrew/opt/glm/include -std=gnu++17 -arch arm64 -o CMakeFiles/scop.dir/src/renderer/RenderPass/RenderPass.cpp.o -c /Users/albaud/Documents/Programation/scop/src/renderer/RenderPass/RenderPass.cpp",
+  "file": "/Users/albaud/Documents/Programation/scop/src/renderer/RenderPass/RenderPass.cpp",
+  "output": "CMakeFiles/scop.dir/src/renderer/RenderPass/RenderPass.cpp.o"
+},
+{
+  "directory": "/Users/albaud/Documents/Programation/scop",
+  "command": "/usr/bin/c++ -DVK_USE_PLATFORM_MACOS_MVK -I/opt/homebrew/opt/glfw/include -I/Users/albaud/Documents/Programation/scop/src -I/opt/homebrew/opt/glm/include -std=gnu++17 -arch arm64 -o CMakeFiles/scop.dir/src/renderer/Renderer/Renderer.cpp.o -c /Users/albaud/Documents/Programation/scop/src/renderer/Renderer/Renderer.cpp",
+  "file": "/Users/albaud/Documents/Programation/scop/src/renderer/Renderer/Renderer.cpp",
+  "output": "CMakeFiles/scop.dir/src/renderer/Renderer/Renderer.cpp.o"
+},
+{
+  "directory": "/Users/albaud/Documents/Programation/scop",
+  "command": "/usr/bin/c++ -DVK_USE_PLATFORM_MACOS_MVK -I/opt/homebrew/opt/glfw/include -I/Users/albaud/Documents/Programation/scop/src -I/opt/homebrew/opt/glm/include -std=gnu++17 -arch arm64 -o CMakeFiles/scop.dir/src/resources/Buffer/Buffer.cpp.o -c /Users/albaud/Documents/Programation/scop/src/resources/Buffer/Buffer.cpp",
+  "file": "/Users/albaud/Documents/Programation/scop/src/resources/Buffer/Buffer.cpp",
+  "output": "CMakeFiles/scop.dir/src/resources/Buffer/Buffer.cpp.o"
+},
+{
+  "directory": "/Users/albaud/Documents/Programation/scop",
+  "command": "/usr/bin/c++ -DVK_USE_PLATFORM_MACOS_MVK -I/opt/homebrew/opt/glfw/include -I/Users/albaud/Documents/Programation/scop/src -I/opt/homebrew/opt/glm/include -std=gnu++17 -arch arm64 -o CMakeFiles/scop.dir/src/resources/DepthBuffer/DepthBuffer.cpp.o -c /Users/albaud/Documents/Programation/scop/src/resources/DepthBuffer/DepthBuffer.cpp",
+  "file": "/Users/albaud/Documents/Programation/scop/src/resources/DepthBuffer/DepthBuffer.cpp",
+  "output": "CMakeFiles/scop.dir/src/resources/DepthBuffer/DepthBuffer.cpp.o"
+},
+{
+  "directory": "/Users/albaud/Documents/Programation/scop",
+  "command": "/usr/bin/c++ -DVK_USE_PLATFORM_MACOS_MVK -I/opt/homebrew/opt/glfw/include -I/Users/albaud/Documents/Programation/scop/src -I/opt/homebrew/opt/glm/include -std=gnu++17 -arch arm64 -o CMakeFiles/scop.dir/src/resources/Image/Image.cpp.o -c /Users/albaud/Documents/Programation/scop/src/resources/Image/Image.cpp",
+  "file": "/Users/albaud/Documents/Programation/scop/src/resources/Image/Image.cpp",
+  "output": "CMakeFiles/scop.dir/src/resources/Image/Image.cpp.o"
+},
+{
+  "directory": "/Users/albaud/Documents/Programation/scop",
+  "command": "/usr/bin/c++ -DVK_USE_PLATFORM_MACOS_MVK -I/opt/homebrew/opt/glfw/include -I/Users/albaud/Documents/Programation/scop/src -I/opt/homebrew/opt/glm/include -std=gnu++17 -arch arm64 -o CMakeFiles/scop.dir/src/resources/ImageView/ImageView.cpp.o -c /Users/albaud/Documents/Programation/scop/src/resources/ImageView/ImageView.cpp",
+  "file": "/Users/albaud/Documents/Programation/scop/src/resources/ImageView/ImageView.cpp",
+  "output": "CMakeFiles/scop.dir/src/resources/ImageView/ImageView.cpp.o"
+},
+{
+  "directory": "/Users/albaud/Documents/Programation/scop",
+  "command": "/usr/bin/c++ -DVK_USE_PLATFORM_MACOS_MVK -I/opt/homebrew/opt/glfw/include -I/Users/albaud/Documents/Programation/scop/src -I/opt/homebrew/opt/glm/include -std=gnu++17 -arch arm64 -o CMakeFiles/scop.dir/src/resources/Sampler/Sampler.cpp.o -c /Users/albaud/Documents/Programation/scop/src/resources/Sampler/Sampler.cpp",
+  "file": "/Users/albaud/Documents/Programation/scop/src/resources/Sampler/Sampler.cpp",
+  "output": "CMakeFiles/scop.dir/src/resources/Sampler/Sampler.cpp.o"
+},
+{
+  "directory": "/Users/albaud/Documents/Programation/scop",
+  "command": "/usr/bin/c++ -DVK_USE_PLATFORM_MACOS_MVK -I/opt/homebrew/opt/glfw/include -I/Users/albaud/Documents/Programation/scop/src -I/opt/homebrew/opt/glm/include -std=gnu++17 -arch arm64 -o CMakeFiles/scop.dir/src/scene/Camera3D/Camera3D.cpp.o -c /Users/albaud/Documents/Programation/scop/src/scene/Camera3D/Camera3D.cpp",
+  "file": "/Users/albaud/Documents/Programation/scop/src/scene/Camera3D/Camera3D.cpp",
+  "output": "CMakeFiles/scop.dir/src/scene/Camera3D/Camera3D.cpp.o"
+},
+{
+  "directory": "/Users/albaud/Documents/Programation/scop",
+  "command": "/usr/bin/c++ -DVK_USE_PLATFORM_MACOS_MVK -I/opt/homebrew/opt/glfw/include -I/Users/albaud/Documents/Programation/scop/src -I/opt/homebrew/opt/glm/include -std=gnu++17 -arch arm64 -o CMakeFiles/scop.dir/src/scene/Scene3D/Scene3D.cpp.o -c /Users/albaud/Documents/Programation/scop/src/scene/Scene3D/Scene3D.cpp",
+  "file": "/Users/albaud/Documents/Programation/scop/src/scene/Scene3D/Scene3D.cpp",
+  "output": "CMakeFiles/scop.dir/src/scene/Scene3D/Scene3D.cpp.o"
+},
+{
+  "directory": "/Users/albaud/Documents/Programation/scop",
+  "command": "/usr/bin/c++ -DVK_USE_PLATFORM_MACOS_MVK -I/opt/homebrew/opt/glfw/include -I/Users/albaud/Documents/Programation/scop/src -I/opt/homebrew/opt/glm/include -std=gnu++17 -arch arm64 -o CMakeFiles/scop.dir/src/utils.cpp.o -c /Users/albaud/Documents/Programation/scop/src/utils.cpp",
+  "file": "/Users/albaud/Documents/Programation/scop/src/utils.cpp",
+  "output": "CMakeFiles/scop.dir/src/utils.cpp.o"
+},
+{
+  "directory": "/Users/albaud/Documents/Programation/scop",
+  "command": "/usr/bin/c++ -DVK_USE_PLATFORM_MACOS_MVK -I/opt/homebrew/opt/glfw/include -I/Users/albaud/Documents/Programation/scop/src -I/opt/homebrew/opt/glm/include -std=gnu++17 -arch arm64 -o CMakeFiles/scop.dir/src/vulkan/CommandBuffer/SingleUseCommandBuffer.cpp.o -c /Users/albaud/Documents/Programation/scop/src/vulkan/CommandBuffer/SingleUseCommandBuffer.cpp",
+  "file": "/Users/albaud/Documents/Programation/scop/src/vulkan/CommandBuffer/SingleUseCommandBuffer.cpp",
+  "output": "CMakeFiles/scop.dir/src/vulkan/CommandBuffer/SingleUseCommandBuffer.cpp.o"
+},
+{
+  "directory": "/Users/albaud/Documents/Programation/scop",
+  "command": "/usr/bin/c++ -DVK_USE_PLATFORM_MACOS_MVK -I/opt/homebrew/opt/glfw/include -I/Users/albaud/Documents/Programation/scop/src -I/opt/homebrew/opt/glm/include -std=gnu++17 -arch arm64 -o CMakeFiles/scop.dir/src/vulkan/Device/Decive.cpp.o -c /Users/albaud/Documents/Programation/scop/src/vulkan/Device/Decive.cpp",
+  "file": "/Users/albaud/Documents/Programation/scop/src/vulkan/Device/Decive.cpp",
+  "output": "CMakeFiles/scop.dir/src/vulkan/Device/Decive.cpp.o"
+},
+{
+  "directory": "/Users/albaud/Documents/Programation/scop",
+  "command": "/usr/bin/c++ -DVK_USE_PLATFORM_MACOS_MVK -I/opt/homebrew/opt/glfw/include -I/Users/albaud/Documents/Programation/scop/src -I/opt/homebrew/opt/glm/include -std=gnu++17 -arch arm64 -o CMakeFiles/scop.dir/src/vulkan/Inputs/InputEvent.cpp.o -c /Users/albaud/Documents/Programation/scop/src/vulkan/Inputs/InputEvent.cpp",
+  "file": "/Users/albaud/Documents/Programation/scop/src/vulkan/Inputs/InputEvent.cpp",
+  "output": "CMakeFiles/scop.dir/src/vulkan/Inputs/InputEvent.cpp.o"
+},
+{
+  "directory": "/Users/albaud/Documents/Programation/scop",
+  "command": "/usr/bin/c++ -DVK_USE_PLATFORM_MACOS_MVK -I/opt/homebrew/opt/glfw/include -I/Users/albaud/Documents/Programation/scop/src -I/opt/homebrew/opt/glm/include -std=gnu++17 -arch arm64 -o CMakeFiles/scop.dir/src/vulkan/Inputs/Inputs.cpp.o -c /Users/albaud/Documents/Programation/scop/src/vulkan/Inputs/Inputs.cpp",
+  "file": "/Users/albaud/Documents/Programation/scop/src/vulkan/Inputs/Inputs.cpp",
+  "output": "CMakeFiles/scop.dir/src/vulkan/Inputs/Inputs.cpp.o"
+},
+{
+  "directory": "/Users/albaud/Documents/Programation/scop",
+  "command": "/usr/bin/c++ -DVK_USE_PLATFORM_MACOS_MVK -I/opt/homebrew/opt/glfw/include -I/Users/albaud/Documents/Programation/scop/src -I/opt/homebrew/opt/glm/include -std=gnu++17 -arch arm64 -o CMakeFiles/scop.dir/src/vulkan/Instance/Instance.cpp.o -c /Users/albaud/Documents/Programation/scop/src/vulkan/Instance/Instance.cpp",
+  "file": "/Users/albaud/Documents/Programation/scop/src/vulkan/Instance/Instance.cpp",
+  "output": "CMakeFiles/scop.dir/src/vulkan/Instance/Instance.cpp.o"
+},
+{
+  "directory": "/Users/albaud/Documents/Programation/scop",
+  "command": "/usr/bin/c++ -DVK_USE_PLATFORM_MACOS_MVK -I/opt/homebrew/opt/glfw/include -I/Users/albaud/Documents/Programation/scop/src -I/opt/homebrew/opt/glm/include -std=gnu++17 -arch arm64 -o CMakeFiles/scop.dir/src/vulkan/PhysicalDevice/PhysicalDevice.cpp.o -c /Users/albaud/Documents/Programation/scop/src/vulkan/PhysicalDevice/PhysicalDevice.cpp",
+  "file": "/Users/albaud/Documents/Programation/scop/src/vulkan/PhysicalDevice/PhysicalDevice.cpp",
+  "output": "CMakeFiles/scop.dir/src/vulkan/PhysicalDevice/PhysicalDevice.cpp.o"
+},
+{
+  "directory": "/Users/albaud/Documents/Programation/scop",
+  "command": "/usr/bin/c++ -DVK_USE_PLATFORM_MACOS_MVK -I/opt/homebrew/opt/glfw/include -I/Users/albaud/Documents/Programation/scop/src -I/opt/homebrew/opt/glm/include -std=gnu++17 -arch arm64 -o CMakeFiles/scop.dir/src/vulkan/Pipeline/Pipeline.cpp.o -c /Users/albaud/Documents/Programation/scop/src/vulkan/Pipeline/Pipeline.cpp",
+  "file": "/Users/albaud/Documents/Programation/scop/src/vulkan/Pipeline/Pipeline.cpp",
+  "output": "CMakeFiles/scop.dir/src/vulkan/Pipeline/Pipeline.cpp.o"
+},
+{
+  "directory": "/Users/albaud/Documents/Programation/scop",
+  "command": "/usr/bin/c++ -DVK_USE_PLATFORM_MACOS_MVK -I/opt/homebrew/opt/glfw/include -I/Users/albaud/Documents/Programation/scop/src -I/opt/homebrew/opt/glm/include -std=gnu++17 -arch arm64 -o CMakeFiles/scop.dir/src/vulkan/QueueFamilyIndices/QueueFamilyIndices.cpp.o -c /Users/albaud/Documents/Programation/scop/src/vulkan/QueueFamilyIndices/QueueFamilyIndices.cpp",
+  "file": "/Users/albaud/Documents/Programation/scop/src/vulkan/QueueFamilyIndices/QueueFamilyIndices.cpp",
+  "output": "CMakeFiles/scop.dir/src/vulkan/QueueFamilyIndices/QueueFamilyIndices.cpp.o"
+},
+{
+  "directory": "/Users/albaud/Documents/Programation/scop",
+  "command": "/usr/bin/c++ -DVK_USE_PLATFORM_MACOS_MVK -I/opt/homebrew/opt/glfw/include -I/Users/albaud/Documents/Programation/scop/src -I/opt/homebrew/opt/glm/include -std=gnu++17 -arch arm64 -o CMakeFiles/scop.dir/src/vulkan/Surface/Surface.cpp.o -c /Users/albaud/Documents/Programation/scop/src/vulkan/Surface/Surface.cpp",
+  "file": "/Users/albaud/Documents/Programation/scop/src/vulkan/Surface/Surface.cpp",
+  "output": "CMakeFiles/scop.dir/src/vulkan/Surface/Surface.cpp.o"
+},
+{
+  "directory": "/Users/albaud/Documents/Programation/scop",
+  "command": "/usr/bin/c++ -DVK_USE_PLATFORM_MACOS_MVK -I/opt/homebrew/opt/glfw/include -I/Users/albaud/Documents/Programation/scop/src -I/opt/homebrew/opt/glm/include -std=gnu++17 -arch arm64 -o CMakeFiles/scop.dir/src/vulkan/SwapChain/SwapchainChooser.cpp.o -c /Users/albaud/Documents/Programation/scop/src/vulkan/SwapChain/SwapchainChooser.cpp",
+  "file": "/Users/albaud/Documents/Programation/scop/src/vulkan/SwapChain/SwapchainChooser.cpp",
+  "output": "CMakeFiles/scop.dir/src/vulkan/SwapChain/SwapchainChooser.cpp.o"
+},
+{
+  "directory": "/Users/albaud/Documents/Programation/scop",
+  "command": "/usr/bin/c++ -DVK_USE_PLATFORM_MACOS_MVK -I/opt/homebrew/opt/glfw/include -I/Users/albaud/Documents/Programation/scop/src -I/opt/homebrew/opt/glm/include -std=gnu++17 -arch arm64 -o CMakeFiles/scop.dir/src/vulkan/ValidationLayers/ValidationLayers.cpp.o -c /Users/albaud/Documents/Programation/scop/src/vulkan/ValidationLayers/ValidationLayers.cpp",
+  "file": "/Users/albaud/Documents/Programation/scop/src/vulkan/ValidationLayers/ValidationLayers.cpp",
+  "output": "CMakeFiles/scop.dir/src/vulkan/ValidationLayers/ValidationLayers.cpp.o"
+},
+{
+  "directory": "/Users/albaud/Documents/Programation/scop",
+  "command": "/usr/bin/c++ -DVK_USE_PLATFORM_MACOS_MVK -I/opt/homebrew/opt/glfw/include -I/Users/albaud/Documents/Programation/scop/src -I/opt/homebrew/opt/glm/include -std=gnu++17 -arch arm64 -o CMakeFiles/scop.dir/src/vulkan/Window/Window.cpp.o -c /Users/albaud/Documents/Programation/scop/src/vulkan/Window/Window.cpp",
+  "file": "/Users/albaud/Documents/Programation/scop/src/vulkan/Window/Window.cpp",
+  "output": "CMakeFiles/scop.dir/src/vulkan/Window/Window.cpp.o"
+}
+]
