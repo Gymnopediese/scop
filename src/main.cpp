@@ -19,13 +19,26 @@ class Scop {
 
 public:
 
-    Scop(){}
+    Scop(int argc, char ** argv){
+
+        if (argc < 2) throw std::runtime_error("invalid args : scop <.obj file> (<.ppm texture>)");
+        if (argc > 3) throw std::runtime_error("invalid args : scop <.obj file> (<.ppm texture>)");
+
+        ctx.objPath = argv[1];
+        if (argc == 3)
+            ctx.textPath = argv[2];
+
+        
+        renderer = new Renderer(ctx);
+    }
 
     void run() {
         mainLoop();
     }
         
-    ~Scop() {}
+    ~Scop() {
+        delete renderer;
+    }
 
 
 private:
@@ -40,11 +53,11 @@ private:
     Device                          device          = Device(ctx);
     VkDebugUtilsMessengerEXT        callback;
 
-    Renderer                        renderer = Renderer(ctx);
+    Renderer                        *renderer;
 
 
     void mainLoop() {
-        std::cout << "ah bah au moin est la ! " << std::endl;
+
 
         glfwSetInputMode(window.window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
 
@@ -57,13 +70,14 @@ private:
         while (!glfwWindowShouldClose(ctx.window->window)) {
             glfwPollEvents();
 
-            // if (glfwGetKey(ctx.window->window, GLFW_KEY_W)) {
-            //     Inputs::events.push_back(InputEvent(InputEvent::Key, GLFW_KEY_W, glfwGetKey(ctx.window->window, GLFW_KEY_W)));
-            // }
-            // if (glfwGetKey(ctx.window->window, GLFW_KEY_ESCAPE) == GLFW_PRESS) {
-            //     glfwSetWindowShouldClose(ctx.window->window, true);
-            // }
-            renderer.drawFrame();
+            if (glfwGetKey(ctx.window->window, GLFW_KEY_ESCAPE) == GLFW_PRESS) {
+                glfwSetInputMode(window.window, GLFW_CURSOR, GLFW_CURSOR_NORMAL);
+            }
+            if (glfwGetMouseButton(ctx.window->window, GLFW_MOUSE_BUTTON_1) == GLFW_PRESS) {
+                glfwSetInputMode(window.window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
+            }
+            renderer->drawFrame();
+
             Inputs::clear();
             
         }
@@ -72,13 +86,16 @@ private:
 
 };
 
-int main() {
-    Scop scop;
+int main(int argc, char ** argv) {
+
+
 
     try {
+        std::cout << argc << std::endl;
+        Scop scop(argc, argv);
         scop.run();
-    } catch (const std::exception& e) {
-        std::cerr << e.what() << std::endl;
+    } catch (const std::runtime_error& e) {
+        std::cerr << "scop: " << e.what() << std::endl;
         return EXIT_FAILURE;
     }
 

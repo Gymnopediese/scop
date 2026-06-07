@@ -24,11 +24,6 @@ InputEvent::InputEvent(EventType type, int key, int action) : type(type), key(ke
     }
     keystates[key] = this->action;
 
-    if (type == Key)
-    {
-        std::cout <<"[KEY] create" << std::endl;
-
-    }
 }
 
 InputEvent::InputEvent(EventType type, double x, double y) : type(type), x(x), y(y) {

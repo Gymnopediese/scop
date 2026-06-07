@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = -DVK_USE_PLATFORM_MACOS_MVK
 
-CXX_INCLUDES = -I/opt/homebrew/opt/glfw/include -I/Users/albaud/Documents/Programation/scop/src -I/opt/homebrew/opt/glm/include
+CXX_INCLUDES = -I/opt/homebrew/opt/glfw/include -I/Users/albaud/Documents/Programation/42/scop/src -I/opt/homebrew/opt/glm/include
 
 CXX_FLAGSarm64 = -std=gnu++17 -arch arm64
 

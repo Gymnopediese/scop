@@ -54,10 +54,10 @@ RM = /opt/homebrew/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/albaud/Documents/Programation/scop
+CMAKE_SOURCE_DIR = /Users/albaud/Documents/Programation/42/scop
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/albaud/Documents/Programation/scop
+CMAKE_BINARY_DIR = /Users/albaud/Documents/Programation/42/scop
 
 #=============================================================================
 # Directory level rules for the build root directory
@@ -85,14 +85,14 @@ clean: CMakeFiles/scop.dir/clean
 CMakeFiles/scop.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/scop.dir/build.make CMakeFiles/scop.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/scop.dir/build.make CMakeFiles/scop.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/albaud/Documents/Programation/scop/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31 "Built target scop"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/albaud/Documents/Programation/42/scop/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31 "Built target scop"
 .PHONY : CMakeFiles/scop.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/scop.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/albaud/Documents/Programation/scop/CMakeFiles 31
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/albaud/Documents/Programation/42/scop/CMakeFiles 31
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/scop.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/albaud/Documents/Programation/scop/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/albaud/Documents/Programation/42/scop/CMakeFiles 0
 .PHONY : CMakeFiles/scop.dir/rule
 
 # Convenience name for target.
@@ -102,7 +102,7 @@ scop: CMakeFiles/scop.dir/rule
 # codegen rule for target.
 CMakeFiles/scop.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/scop.dir/build.make CMakeFiles/scop.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/albaud/Documents/Programation/scop/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31 "Finished codegen for target scop"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/albaud/Documents/Programation/42/scop/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31 "Finished codegen for target scop"
 .PHONY : CMakeFiles/scop.dir/codegen
 
 # clean rule for target.

@@ -22,7 +22,6 @@ void Inputs::clear() {
 }
 
 void Inputs::keyCallback(GLFWwindow*, int key, int scancode, int action, int mods) {
-    // std::cout << "[INPUT] new key" << std::endl;
     events.push_back(InputEvent(InputEvent::Key, key, action));
 }
 

@@ -24,6 +24,9 @@ struct VulkanContext
     VkDescriptorSetLayout   *descriptorSetLayout;
     VkDescriptorSetLayout   *postProcessingLayout;
 
+    std::string             objPath;
+    std::string             textPath = "";
+
     VulkanContext(){}
 };
 

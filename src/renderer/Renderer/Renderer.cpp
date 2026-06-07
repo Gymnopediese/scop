@@ -72,20 +72,10 @@ Renderer::Renderer(VulkanContext &ctx) :
     scene.camera.uniformBuffers = cameraBuffers;
 
     createFramebuffers();    
-    std::cout << "[FRAMBUFFER] DONE" << std::endl;
 
-    for (Object3D *object : scene.objects)
-    {
-        descriptors.setObjectDescriptor(*object, scene.camera);
-    }
-    std::cout << "[DESCRIPTOR] OBJECT PROCESS SET" << std::endl;
+    descriptors.setObjectDescriptor(*scene.objects[0], scene.camera);
     descriptors.createPostPorcessSets(preProcessImages, preProcessSamplers);
-
-
-    
-    std::cout << "[DESCRIPTOR] POST PROCESS SET" << std::endl;
-
-
+    std::cout << "[DESCRIPTORSET] DONE" << std::endl;
 
     commandBuffers.resize(swapchain.swapChainImages.size());
     VkCommandBufferAllocateInfo allocInfo{};
