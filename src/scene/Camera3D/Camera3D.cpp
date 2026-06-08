@@ -13,82 +13,99 @@ Camera3D::Camera3D(VulkanContext &ctx) : ctx(ctx)
     // }
 }
 
-glm::mat4 Camera3D::getView()
+mat4 Camera3D::getView()
 {
-    glm::vec3 front;
-    front.x = cos(glm::radians(yaw)) * cos(glm::radians(pitch));
-    front.y = sin(glm::radians(pitch));
-    front.z = sin(glm::radians(yaw)) * cos(glm::radians(pitch));
+    vec3 front;
+    front.x = cos(radians(yaw)) * cos(radians(pitch));
+    front.y = sin(radians(pitch));
+    front.z = sin(radians(yaw)) * cos(radians(pitch));
 
-    glm::vec3 direction = glm::normalize(front);
+    vec3 direction = front.normalize();
 
-    return glm::lookAt(
+    return mat4::lookAt(
         position,
         position + direction,
-        glm::vec3(0.0f, 1.0f, 0.0f)
+        vec3(0.0f, 1.0f, 0.0f)
     );
 }
 
-void Camera3D::processMouse(float x, float y)
+void Camera3D::processMouse(float x, float y, float delta)
 {
-    yaw   += x * sensitivity;
-    pitch -= y * sensitivity;
+    yaw   += x * sensitivity * delta;
+    pitch -= y * sensitivity * delta;
 
     if (pitch > 89.0f) pitch = 89.0f;
     if (pitch < -89.0f) pitch = -89.0f;
 }
 
+void dumpHex(const mat4& obj)
+{
+    const unsigned char* p =
+        reinterpret_cast<const unsigned char*>(&obj);
 
-void Camera3D::update(uint32_t currentImage) {
+    for (size_t i = 0; i < sizeof(obj); i++) {
+        printf("%02X ", p[i]);
 
-    static float mouse_x = Inputs::mouse_x;
-    static float mouse_y = Inputs::mouse_y;
+        if ((i + 1) % 16 == 0)
+            printf("\n");
+    }
+
+    printf("\n");
+}
 
 
+void Camera3D::update(uint32_t currentImage, float delta) {
 
-    float dt = 1;
-    glm::vec3 front;
-    front.x = cos(glm::radians(yaw)) * cos(glm::radians(pitch));
-    front.y = sin(glm::radians(pitch));
-    front.z = sin(glm::radians(yaw)) * cos(glm::radians(pitch));
-    front = glm::normalize(front);
+    static float mouse_x = MAXFLOAT;
+    static float mouse_y = MAXFLOAT;
 
-    glm::vec3 right = glm::normalize(glm::cross(front, glm::vec3(0,1,0)));
+    if (mouse_x == MAXFLOAT)
+    {
+        mouse_x = Inputs::mouse_x;
+        mouse_y = Inputs::mouse_y;
+    }
+
+
+    vec3 front;
+    front.x = cos(radians(yaw)) * cos(radians(pitch));
+    front.y = sin(radians(pitch));
+    front.z = sin(radians(yaw)) * cos(radians(pitch));
+    front = front.normalize();
+
+    vec3 right = front.cross(vec3(0,1,0)).normalize();
 
     if (Inputs::is_action_pressed(GLFW_KEY_W))
-        position += front * speed * dt;
+        position += front * speed * delta;
 
     if (Inputs::is_action_pressed(GLFW_KEY_S))
-        position -= front * speed * dt;
+        position -= front * speed * delta;
 
     if (Inputs::is_action_pressed(GLFW_KEY_A))
-        position -= right * speed * dt;
+        position -= right * speed * delta;
 
     if (Inputs::is_action_pressed(GLFW_KEY_D))
-        position += right * speed * dt;
-    processMouse(Inputs::mouse_x - mouse_x,  Inputs::mouse_y- mouse_y);
+        position += right * speed * delta;
+    processMouse(Inputs::mouse_x - mouse_x,  Inputs::mouse_y- mouse_y, delta);
 
     // float time = std::chrono::duration<float, std::chrono::seconds::period>(period).count();
 
 
     CameraBufferObject ubo{};
-    // ubo.model = glm::rotate(glm::mat4(1.0f), time * glm::radians(90.0f), glm::vec3(0.0f, 1.0f, 0.f));
-    ubo.model = glm::mat4(1.0f);
-    // ubo.view = glm::lookAt(glm::vec3(5.0f, 5.0f, 5.0f), glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(0.0f, 0.0f, 1.0f));
+    // ubo.model = rotate(mat4(1.0f), time * radians(90.0f), vec3(0.0f, 1.0f, 0.f));
+    ubo.model = mat4::identity();
+    // ubo.view = lookAt(vec3(5.0f, 5.0f, 5.0f), vec3(0.0f, 0.0f, 0.0f), vec3(0.0f, 0.0f, 1.0f));
 
     ubo.view = getView();
-    // ubo.proj = glm::perspective(glm::radians(45.0f), ctx.swapChain->swapChainExtent.width / (float) ctx.swapChain->swapChainExtent.height, 0.1f, 100.0f);
+    // ubo.view = mat4::lookAt(vec3(10.0f, 10.0f, 10.0f), vec3(0.0f, 0.0f, 0.0f), vec3(0.0f, 0.0f, 1.0f));
+    // ubo.proj = perspective(radians(45.0f), ctx.swapChain->swapChainExtent.width / (float) ctx.swapChain->swapChainExtent.height, 0.1f, 100.0f);
 
-    ubo.proj = glm::perspective(
-        glm::radians(45.0f),
+    ubo.proj = mat4::perspective(
+        radians(45.0f),
         ctx.swapChain->swapChainExtent.width /
         (float)ctx.swapChain->swapChainExtent.height,
-        0.1f,
+        0.1f, 
         100.0f
     );
-
-
-    ubo.proj[1][1] *= -1;
 
     uniformBuffers[currentImage]->mapMemory(&ubo, sizeof(ubo));
     mouse_x = Inputs::mouse_x;

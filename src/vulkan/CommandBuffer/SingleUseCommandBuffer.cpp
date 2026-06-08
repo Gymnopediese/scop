@@ -29,4 +29,5 @@ SingleUseCommandBuffer::~SingleUseCommandBuffer() {
     vkQueueWaitIdle(*ctx.graphicsQueue);
 
     vkFreeCommandBuffers(*ctx.device, *ctx.commandPool, 1, &commandBuffer);
+    
 }

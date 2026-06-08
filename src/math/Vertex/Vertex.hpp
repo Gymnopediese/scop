@@ -8,10 +8,10 @@
 
 
 struct Vertex {
-    glm::vec3 pos;
-    glm::vec3 normal;
-    glm::vec3 modulate = {1, 1, 1};
-    glm::vec2 uv;
+    vec3 pos;
+    vec3 normal;
+    vec3 modulate = {1, 1, 1};
+    vec2 uv;
 
     static VkVertexInputBindingDescription getBindingDescription() {
         VkVertexInputBindingDescription bindingDescription{};

@@ -38,7 +38,7 @@ RenderPass *RenderPass::preProcessPass(VulkanContext & ctx)
 
     VkAttachmentReference colorAttachmentRef{};
     colorAttachmentRef.attachment = 0;
-    colorAttachmentRef.layout = VK_IMAGE_LAYOUT_SHADER_READ_ONLY_OPTIMAL;
+    colorAttachmentRef.layout = VK_IMAGE_LAYOUT_COLOR_ATTACHMENT_OPTIMAL;
 
     VkAttachmentReference depthAttachmentRef{};
     depthAttachmentRef.attachment = 1;
@@ -146,6 +146,8 @@ RenderPass *RenderPass::postProcessPass(VulkanContext & ctx)
 
 RenderPass::~RenderPass()
 {
+
+    std::cout << "[Destroying] RenderPass" << std::endl;
     if (renderPass != VK_NULL_HANDLE)
     vkDestroyRenderPass(*ctx.device, renderPass, nullptr);
 }

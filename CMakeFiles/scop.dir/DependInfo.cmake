@@ -13,6 +13,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/Users/albaud/Documents/Programation/42/scop/src/loader/OBJ.cpp" "CMakeFiles/scop.dir/src/loader/OBJ.cpp.o" "gcc" "CMakeFiles/scop.dir/src/loader/OBJ.cpp.o.d"
   "/Users/albaud/Documents/Programation/42/scop/src/loader/PPM.cpp" "CMakeFiles/scop.dir/src/loader/PPM.cpp.o" "gcc" "CMakeFiles/scop.dir/src/loader/PPM.cpp.o.d"
   "/Users/albaud/Documents/Programation/42/scop/src/main.cpp" "CMakeFiles/scop.dir/src/main.cpp.o" "gcc" "CMakeFiles/scop.dir/src/main.cpp.o.d"
+  "/Users/albaud/Documents/Programation/42/scop/src/math/math.cpp" "CMakeFiles/scop.dir/src/math/math.cpp.o" "gcc" "CMakeFiles/scop.dir/src/math/math.cpp.o.d"
   "/Users/albaud/Documents/Programation/42/scop/src/renderer/DescriptorManager/DescriptorManager.cpp" "CMakeFiles/scop.dir/src/renderer/DescriptorManager/DescriptorManager.cpp.o" "gcc" "CMakeFiles/scop.dir/src/renderer/DescriptorManager/DescriptorManager.cpp.o.d"
   "/Users/albaud/Documents/Programation/42/scop/src/renderer/FrameData/FrameData.cpp" "CMakeFiles/scop.dir/src/renderer/FrameData/FrameData.cpp.o" "gcc" "CMakeFiles/scop.dir/src/renderer/FrameData/FrameData.cpp.o.d"
   "/Users/albaud/Documents/Programation/42/scop/src/renderer/RenderPass/RenderPass.cpp" "CMakeFiles/scop.dir/src/renderer/RenderPass/RenderPass.cpp.o" "gcc" "CMakeFiles/scop.dir/src/renderer/RenderPass/RenderPass.cpp.o.d"

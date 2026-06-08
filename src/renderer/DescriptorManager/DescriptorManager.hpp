@@ -36,6 +36,7 @@ class DescriptorManager  {
 
         void createPostProcessLayout();
         void createPostPorcessSets(std::vector<Image *> &images, std::vector<Sampler *> &samplers);
+        void deletePostPorcessSets();
 
         void setObjectDescriptor(Object3D &object, Camera3D & camera);
         

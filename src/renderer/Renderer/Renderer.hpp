@@ -19,39 +19,46 @@ class Renderer
 
 
 
-        SwapChain                       swapchain;
-
+        SwapChain                       *swapchain;
         RenderPass                      *renderPass;
         RenderPass                      *postRenderPass;
 
-        DescriptorManager               descriptors;
-        DepthBuffer                     depthBuffer;
-        VkCommandPool                   *commandPool;
-        Scene3D                         scene;
+        DescriptorManager               *descriptors;
+        DepthBuffer                     *depthBuffer;
+        VkCommandPool                   commandPool;
+        Scene3D                         *scene;
+        Pipeline                        *postProcessPipeline;
+
         std::vector<VkFence>            imagesInFlight;
         size_t                          currentFrame = 0;
 
         std::vector<VkFramebuffer>      preProcessFramebuffers;
         std::vector<Image *>            preProcessImages;
         std::vector<Sampler *>          preProcessSamplers;
-        Pipeline                        *postProcessPipeline;
-
-
 
         std::vector<VkFramebuffer>      swapChainFramebuffers;
 
 
 
         Renderer(VulkanContext &ctx);
-        void drawFrame();
+        void drawFrame(float delta);
+
+        void delete_frame_buffers();
         ~Renderer();
 
         void createDescriptorPool();
         void createDescriptorSetLayout();
         void buildCommand(int imageIndex);
+        void reCreateSwapChain();
 
 
         void createFramebuffers();
+
+
+        void createPreProcess();
+        void deletePreProcess();
+
+
     private:
         VulkanContext &ctx;
 };

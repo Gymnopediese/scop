@@ -37,6 +37,12 @@
 },
 {
   "directory": "/Users/albaud/Documents/Programation/42/scop",
+  "command": "/usr/bin/c++ -DVK_USE_PLATFORM_MACOS_MVK -I/opt/homebrew/opt/glfw/include -I/Users/albaud/Documents/Programation/42/scop/src -I/opt/homebrew/opt/glm/include -std=gnu++17 -arch arm64 -o CMakeFiles/scop.dir/src/math/math.cpp.o -c /Users/albaud/Documents/Programation/42/scop/src/math/math.cpp",
+  "file": "/Users/albaud/Documents/Programation/42/scop/src/math/math.cpp",
+  "output": "CMakeFiles/scop.dir/src/math/math.cpp.o"
+},
+{
+  "directory": "/Users/albaud/Documents/Programation/42/scop",
   "command": "/usr/bin/c++ -DVK_USE_PLATFORM_MACOS_MVK -I/opt/homebrew/opt/glfw/include -I/Users/albaud/Documents/Programation/42/scop/src -I/opt/homebrew/opt/glm/include -std=gnu++17 -arch arm64 -o CMakeFiles/scop.dir/src/renderer/DescriptorManager/DescriptorManager.cpp.o -c /Users/albaud/Documents/Programation/42/scop/src/renderer/DescriptorManager/DescriptorManager.cpp",
   "file": "/Users/albaud/Documents/Programation/42/scop/src/renderer/DescriptorManager/DescriptorManager.cpp",
   "output": "CMakeFiles/scop.dir/src/renderer/DescriptorManager/DescriptorManager.cpp.o"

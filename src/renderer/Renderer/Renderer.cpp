@@ -6,8 +6,8 @@
 #include "vulkan/vulkan_core.h"
 #include <vector>
 
-VkCommandPool *createCommandPool(VulkanContext &ctx) {
-    VkCommandPool *commandPool = new VkCommandPool();
+VkCommandPool createCommandPool(VulkanContext &ctx) {
+    VkCommandPool commandPool = VkCommandPool();
     QueueFamilyIndices queueFamilyIndices = findQueueFamilies(*ctx.physicalDevice, ctx);
 
     VkCommandPoolCreateInfo poolInfo{};
@@ -17,11 +17,10 @@ VkCommandPool *createCommandPool(VulkanContext &ctx) {
     poolInfo.flags = VK_COMMAND_POOL_CREATE_RESET_COMMAND_BUFFER_BIT; // Optionel
     
 
-    if (vkCreateCommandPool(*ctx.device, &poolInfo, nullptr, commandPool) != VK_SUCCESS) {
+    if (vkCreateCommandPool(*ctx.device, &poolInfo, nullptr, &commandPool) != VK_SUCCESS) {
         throw std::runtime_error("échec de la création d'une command pool!");
     }
 
-    ctx.commandPool = commandPool;
     std::cout << "[COMMANDPOOL] DONE" << std::endl;
     return commandPool;
 }
@@ -30,59 +29,43 @@ VkCommandPool *createCommandPool(VulkanContext &ctx) {
 
 
 Renderer::Renderer(VulkanContext &ctx) :
-    ctx(ctx),
-    renderPass(RenderPass::preProcessPass(ctx)),
-    postRenderPass(RenderPass::postProcessPass(ctx)),
-    swapchain(SwapChain(ctx)),
-    commandPool(createCommandPool(ctx)),
-    scene(Scene3D(ctx)),
-    descriptors(DescriptorManager(ctx)),
-    depthBuffer(DepthBuffer(ctx))
+    ctx(ctx)
 {
-    // exit(0);
+
+    swapchain = new SwapChain(ctx);
+    renderPass = RenderPass::preProcessPass(ctx);
+    postRenderPass = RenderPass::postProcessPass(ctx);
+    commandPool = createCommandPool(ctx);
+    ctx.commandPool = &commandPool;
+    descriptors = new DescriptorManager(ctx);
+    depthBuffer = new DepthBuffer(ctx);
+    scene = new Scene3D(ctx);
 
     postProcessPipeline = Pipeline::pipelinePostProcess(ctx);
 
-    imagesInFlight.resize(swapchain.swapChainImages.size(), VK_NULL_HANDLE);
+    imagesInFlight.resize(swapchain->swapChainImages.size(), VK_NULL_HANDLE);
     for (size_t i = 0; i < MAX_FRAMES_IN_FLIGHT; i++) {
         frames.push_back(new FrameData(ctx));
         cameraBuffers.push_back(frames[i]->cameraBuffer);
     }
 
 
-    preProcessImages.resize(swapchain.swapChainImages.size());
-    preProcessSamplers.resize(swapchain.swapChainImages.size());
-    for (size_t i = 0; i < swapchain.swapChainImages.size(); i++) {
-        preProcessImages[i] = (new Image(swapchain.swapChainExtent.width, swapchain.swapChainExtent.height, ctx, VK_IMAGE_USAGE_SAMPLED_BIT | VK_IMAGE_USAGE_COLOR_ATTACHMENT_BIT , swapchain.swapChainImageFormat));
-        preProcessSamplers[i] = (new Sampler(ctx));
-    }
 
-
-    std::cout << "[FRAMES] DONE" << std::endl;
-
-    // std::cout << "[BINDING] BICTCH 0" << std::endl;
-    // descriptors.bindCameraBuffers(cameraBuffers);
-    // std::cout << "[BINDING] BICTCH 1" << std::endl;
-    // descriptors.bindObjectBuffers(objectsBuffers);
-    // std::cout << "[BINDING] BICTCH 2" << std::endl;
-    // descriptors.bindTextureData(Texture::all_textures);
-    // std::cout << "[BINDING] BICTCH" << std::endl;
-    
-
-    scene.camera.uniformBuffers = cameraBuffers;
-
+    createPreProcess();
+    scene->camera.uniformBuffers = cameraBuffers;
     createFramebuffers();    
 
-    descriptors.setObjectDescriptor(*scene.objects[0], scene.camera);
-    descriptors.createPostPorcessSets(preProcessImages, preProcessSamplers);
+    descriptors->setObjectDescriptor(*scene->objects[0], scene->camera);
+    descriptors->setObjectDescriptor(*scene->objects[1], scene->camera);
+    descriptors->createPostPorcessSets(preProcessImages, preProcessSamplers);
     std::cout << "[DESCRIPTORSET] DONE" << std::endl;
 
-    commandBuffers.resize(swapchain.swapChainImages.size());
+    commandBuffers.resize(swapchain->swapChainImages.size());
     VkCommandBufferAllocateInfo allocInfo{};
     allocInfo.sType = VK_STRUCTURE_TYPE_COMMAND_BUFFER_ALLOCATE_INFO;
     allocInfo.commandPool = *ctx.commandPool;
     allocInfo.level = VK_COMMAND_BUFFER_LEVEL_PRIMARY;
-    allocInfo.commandBufferCount = (uint32_t) swapchain.swapChainImages.size();
+    allocInfo.commandBufferCount = (uint32_t) swapchain->swapChainImages.size();
 
     if (vkAllocateCommandBuffers(*ctx.device, &allocInfo, commandBuffers.data()) != VK_SUCCESS) {
         throw std::runtime_error("échec de l'allocation de command buffers!");
@@ -93,7 +76,62 @@ Renderer::Renderer(VulkanContext &ctx) :
 }
 
 
-void Renderer::drawFrame() {
+void Renderer::createPreProcess()
+{
+    preProcessImages.resize(swapchain->swapChainImages.size());
+    preProcessSamplers.resize(swapchain->swapChainImages.size());
+    for (size_t i = 0; i < swapchain->swapChainImages.size(); i++) {
+        preProcessImages[i] = (new Image(swapchain->swapChainExtent.width, swapchain->swapChainExtent.height, ctx, VK_IMAGE_USAGE_SAMPLED_BIT | VK_IMAGE_USAGE_COLOR_ATTACHMENT_BIT , swapchain->swapChainImageFormat));
+        preProcessSamplers[i] = (new Sampler(ctx));
+    }
+}
+
+void Renderer::deletePreProcess()
+{
+    for (size_t i = 0; i < preProcessImages.size(); i++) {
+        delete preProcessImages[i];
+        delete preProcessSamplers[i];
+    }
+    preProcessImages.resize(0);
+    preProcessSamplers.resize(0);
+}
+
+
+void Renderer::reCreateSwapChain()
+{
+
+    vkDeviceWaitIdle(*ctx.device);
+
+    int width = 0, height = 0;
+    glfwGetFramebufferSize(ctx.window->window, &width, &height);
+    while (width == 0 || height == 0) {
+        glfwGetFramebufferSize(ctx.window->window, &width, &height);
+        glfwWaitEvents();
+    }
+    delete swapchain;
+    delete renderPass;
+    delete postRenderPass;
+    delete depthBuffer;
+    delete postProcessPipeline;
+    deletePreProcess();
+    delete_frame_buffers();  
+    delete scene->objects[0]->material->pipeline;
+
+    swapchain = new SwapChain(ctx);
+    renderPass = RenderPass::preProcessPass(ctx);
+    postRenderPass = RenderPass::postProcessPass(ctx);
+    depthBuffer = new DepthBuffer(ctx);
+    postProcessPipeline = Pipeline::pipelinePostProcess(ctx);
+    createPreProcess();
+    createFramebuffers();
+    scene->objects[0]->material->pipeline = Pipeline::pipeline3D(ctx);
+    scene->objects[1]->material->pipeline = scene->objects[0]->material->pipeline;
+    descriptors->createPostPorcessSets(preProcessImages, preProcessSamplers);
+
+
+}
+
+void Renderer::drawFrame(float delta) {
     
     // std::cout << "[FRAMERENDERING] START" << std::endl;
 
@@ -101,10 +139,10 @@ void Renderer::drawFrame() {
 
 
     uint32_t imageIndex;
-    VkResult result = vkAcquireNextImageKHR(*ctx.device, swapchain.swapChain, UINT64_MAX, frames[currentFrame]->imageAvailable, VK_NULL_HANDLE, &imageIndex);
+    VkResult result = vkAcquireNextImageKHR(*ctx.device, swapchain->swapChain, UINT64_MAX, frames[currentFrame]->imageAvailable, VK_NULL_HANDLE, &imageIndex);
 
     if (result == VK_ERROR_OUT_OF_DATE_KHR) {
-        swapchain.ReCreate();
+        reCreateSwapChain();
         return;
     } else if (result != VK_SUCCESS && result != VK_SUBOPTIMAL_KHR) {
         throw std::runtime_error("échec de la présentation d'une image à la swap chain!");
@@ -121,7 +159,7 @@ void Renderer::drawFrame() {
     // std::cout << "[FRAMERENDERING] FENCE 1 PASSED" << std::endl;
 
 
-    scene.update(currentFrame);
+    scene->update(currentFrame, delta);
     // std::cout << "[FRAMERENDERING] SCENE UPDATED" << std::endl;
 
 
@@ -162,7 +200,7 @@ void Renderer::drawFrame() {
     presentInfo.waitSemaphoreCount = 1;
     presentInfo.pWaitSemaphores = signalSemaphores;
 
-    VkSwapchainKHR swapChains[] = {swapchain.swapChain};
+    VkSwapchainKHR swapChains[] = {swapchain->swapChain};
     presentInfo.swapchainCount = 1;
     presentInfo.pSwapchains = swapChains;
     presentInfo.pImageIndices = &imageIndex;
@@ -174,7 +212,7 @@ void Renderer::drawFrame() {
     if (result == VK_ERROR_OUT_OF_DATE_KHR || result == VK_SUBOPTIMAL_KHR || ctx.window->framebufferResized) 
     {
         ctx.window->framebufferResized = false;
-        swapchain.ReCreate();
+        reCreateSwapChain();
     } else if (result != VK_SUCCESS) {
         throw std::runtime_error("échec de la présentation d'une image!");
     }
@@ -208,7 +246,7 @@ void Renderer::buildCommand(int imageIndex)
     renderPassInfo.framebuffer = preProcessFramebuffers[imageIndex];
 
     renderPassInfo.renderArea.offset = {0, 0};
-    renderPassInfo.renderArea.extent = swapchain.swapChainExtent;
+    renderPassInfo.renderArea.extent = swapchain->swapChainExtent;
 
 
     std::array<VkClearValue, 2> clearValues{};
@@ -223,7 +261,7 @@ void Renderer::buildCommand(int imageIndex)
 
     // std::cout << "[COMMANDBUILD] RENDERPASS START" << std::endl;
 
-    for (Object3D *object : scene.objects)
+    for (Object3D *object : scene->objects)
     {
 
         vkCmdBindPipeline(commandBuffers[imageIndex], VK_PIPELINE_BIND_POINT_GRAPHICS, object->material->pipeline->graphicsPipeline);
@@ -256,7 +294,7 @@ void Renderer::buildCommand(int imageIndex)
     renderPassInfo.framebuffer = swapChainFramebuffers[imageIndex];
 
     renderPassInfo.renderArea.offset = {0, 0};
-    renderPassInfo.renderArea.extent = swapchain.swapChainExtent;
+    renderPassInfo.renderArea.extent = swapchain->swapChainExtent;
 
     clearValues[0].color = {{0.95f, 0.30f, 0.40f, 1.0f}};
     renderPassInfo.clearValueCount = 1;
@@ -266,7 +304,7 @@ void Renderer::buildCommand(int imageIndex)
 
     vkCmdBindPipeline(commandBuffers[imageIndex], VK_PIPELINE_BIND_POINT_GRAPHICS, postProcessPipeline->graphicsPipeline);
 
-    vkCmdBindDescriptorSets(commandBuffers[imageIndex], VK_PIPELINE_BIND_POINT_GRAPHICS, postProcessPipeline->pipelineLayout, 0, 1, &descriptors.postProcessingSets[imageIndex], 0, nullptr);
+    vkCmdBindDescriptorSets(commandBuffers[imageIndex], VK_PIPELINE_BIND_POINT_GRAPHICS, postProcessPipeline->pipelineLayout, 0, 1, &descriptors->postProcessingSets[imageIndex], 0, nullptr);
     
     vkCmdDraw(commandBuffers[imageIndex], 4, 1, 0, 0);
 
@@ -280,15 +318,15 @@ void Renderer::buildCommand(int imageIndex)
 }
 
 void Renderer::createFramebuffers() {
-    preProcessFramebuffers.resize(swapchain.swapChainImageViews.size());
-    swapChainFramebuffers.resize(swapchain.swapChainImageViews.size());
+    preProcessFramebuffers.resize(swapchain->swapChainImageViews.size());
+    swapChainFramebuffers.resize(swapchain->swapChainImageViews.size());
     
-    for (size_t i = 0; i < swapchain.swapChainImageViews.size(); i++) {
+    for (size_t i = 0; i < swapchain->swapChainImageViews.size(); i++) {
 
         std::cout << preProcessImages[i]->textureImageView->imageView << std::endl;
         std::array<VkImageView, 2> attachments = {
             preProcessImages[i]->textureImageView->imageView,
-            depthBuffer.depthImageView->imageView,
+            depthBuffer->depthImageView->imageView,
         };
 
         VkFramebufferCreateInfo framebufferInfo{};
@@ -296,8 +334,8 @@ void Renderer::createFramebuffers() {
         framebufferInfo.renderPass = renderPass->renderPass;
         framebufferInfo.attachmentCount = static_cast<uint32_t>(attachments.size());
         framebufferInfo.pAttachments = attachments.data();
-        framebufferInfo.width = swapchain.swapChainExtent.width;
-        framebufferInfo.height = swapchain.swapChainExtent.height;
+        framebufferInfo.width = swapchain->swapChainExtent.width;
+        framebufferInfo.height = swapchain->swapChainExtent.height;
         framebufferInfo.layers = 1;
         
         
@@ -307,7 +345,7 @@ void Renderer::createFramebuffers() {
         std::cout << "[FRAMEBUFFER] 1 created" << std::endl;
 
         attachments = {
-            swapchain.swapChainImageViews[i],
+            swapchain->swapChainImageViews[i],
             // depthBuffer.depthImageView->imageView,
         };
         framebufferInfo.renderPass = postRenderPass->renderPass;
@@ -322,11 +360,37 @@ void Renderer::createFramebuffers() {
 }
 
 
+void Renderer::delete_frame_buffers()
+{
+    for (size_t i = 0; i < swapChainFramebuffers.size(); i++)
+    {
+        vkDestroyFramebuffer(*ctx.device, swapChainFramebuffers[i], nullptr);
+        vkDestroyFramebuffer(*ctx.device, preProcessFramebuffers[i], nullptr);
+    }
+    swapChainFramebuffers.resize(0);
+    preProcessFramebuffers.resize(0);
+
+}
 
 Renderer::~Renderer()
 {
-    for (auto framebuffer : swapChainFramebuffers) {
-        vkDestroyFramebuffer(*ctx.device, framebuffer, nullptr);
+
+    std::cout << "[Destroying] Renderer" << std::endl;
+    delete swapchain;
+    delete renderPass;
+    delete postRenderPass;
+    delete depthBuffer;
+    delete postProcessPipeline;
+    deletePreProcess();
+    std::cout << "[DELETED] PREPROCESS" << std::endl;
+    delete_frame_buffers();  
+    std::cout << "[DELETED] FRAMEBUFFER" << std::endl;
+    delete scene;
+    delete descriptors;
+    vkDestroyCommandPool(*ctx.device, commandPool, nullptr);
+    for (size_t i = 0; i < MAX_FRAMES_IN_FLIGHT; i++) {
+        delete frames[i];
     }
+    
 }
 

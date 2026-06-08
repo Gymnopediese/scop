@@ -23,5 +23,7 @@ ImageView::ImageView(VkImage &image, VkFormat format, VkImageAspectFlags aspectF
 
 ImageView::~ImageView()
 {
+
+    std::cout << "[Destroying] Image View" << std::endl;
     vkDestroyImageView(*ctx.device, imageView, nullptr);
 }

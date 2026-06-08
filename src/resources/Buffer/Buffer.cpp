@@ -43,7 +43,7 @@ Buffer::Buffer(VkDeviceSize size, VkBufferUsageFlags usage, VkMemoryPropertyFlag
     vkBindBufferMemory(*ctx.device, buffer, bufferMemory, 0);
 }
 
-void Buffer::copyBuffer(Buffer srcBuffer, VkDeviceSize size, VkCommandPool &commandPool) {
+void Buffer::copyBuffer(Buffer &srcBuffer, VkDeviceSize size, VkCommandPool &commandPool) {
 
     SingleUseCommandBuffer commandBuffer = SingleUseCommandBuffer(ctx);
 
@@ -95,7 +95,7 @@ void Buffer::mapMemory(const void *memory, VkDeviceSize size)
 
 Buffer::~Buffer()
 {
-    // if (buffer == VK_NULL_HANDLE) return;
-    // vkDestroyBuffer(*ctx.device, buffer, nullptr);
-    // vkFreeMemory(*ctx.device, bufferMemory, nullptr);
+    if (buffer == VK_NULL_HANDLE) return;
+    vkDestroyBuffer(*ctx.device, buffer, nullptr);
+    vkFreeMemory(*ctx.device, bufferMemory, nullptr);
 }

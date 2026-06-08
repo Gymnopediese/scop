@@ -9,6 +9,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/scop.dir/src/loader/PPM.cpp.o.d"
   "CMakeFiles/scop.dir/src/main.cpp.o"
   "CMakeFiles/scop.dir/src/main.cpp.o.d"
+  "CMakeFiles/scop.dir/src/math/math.cpp.o"
+  "CMakeFiles/scop.dir/src/math/math.cpp.o.d"
   "CMakeFiles/scop.dir/src/renderer/DescriptorManager/DescriptorManager.cpp.o"
   "CMakeFiles/scop.dir/src/renderer/DescriptorManager/DescriptorManager.cpp.o.d"
   "CMakeFiles/scop.dir/src/renderer/FrameData/FrameData.cpp.o"

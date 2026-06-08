@@ -45,5 +45,7 @@ Sampler::Sampler(VulkanContext &ctx) : ctx(ctx)
 
 Sampler::~Sampler()
 {
+
+    std::cout << "[Destroying] Sampler" << std::endl;
     vkDestroySampler(*ctx.device, textureSampler, nullptr);
 }

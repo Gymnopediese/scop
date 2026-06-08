@@ -127,6 +127,7 @@ void Image::transitionImageLayout(VkFormat format, VkImageLayout oldLayout, VkIm
 
 Image::~Image(){
 
+    std::cout << "[Destroying] Image" << std::endl;
     delete textureImageView;
     vkDestroyImage(*ctx.device, textureImage, nullptr);
     vkFreeMemory(*ctx.device, textureImageMemory, nullptr);

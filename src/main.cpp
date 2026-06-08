@@ -66,8 +66,13 @@ private:
         glfwSetCursorPosCallback(window.window, Inputs::cursorPosCallback);
         glfwSetScrollCallback(window.window, Inputs::scrollCallback);
 
+        double lastTime = glfwGetTime();
 
         while (!glfwWindowShouldClose(ctx.window->window)) {
+            double currentTime = glfwGetTime();
+            float delta = static_cast<float>(currentTime - lastTime);
+            lastTime = currentTime;
+        
             glfwPollEvents();
 
             if (glfwGetKey(ctx.window->window, GLFW_KEY_ESCAPE) == GLFW_PRESS) {
@@ -76,7 +81,7 @@ private:
             if (glfwGetMouseButton(ctx.window->window, GLFW_MOUSE_BUTTON_1) == GLFW_PRESS) {
                 glfwSetInputMode(window.window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
             }
-            renderer->drawFrame();
+            renderer->drawFrame(delta);
 
             Inputs::clear();
             

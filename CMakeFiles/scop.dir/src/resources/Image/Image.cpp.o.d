@@ -816,6 +816,11 @@ CMakeFiles/scop.dir/src/resources/Image/Image.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__filesystem/u8path.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/set \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__tree \
+  /Users/albaud/Documents/Programation/42/scop/src/math/math.hpp \
+  /Users/albaud/Documents/Programation/42/scop/src/math/mat4.hpp \
+  /Users/albaud/Documents/Programation/42/scop/src/math/vec3.hpp \
+  /Users/albaud/Documents/Programation/42/scop/src/math/vec2.hpp \
+  /Users/albaud/Documents/Programation/42/scop/src/math/vec4.hpp \
   /opt/homebrew/opt/glfw/include/GLFW/glfw3.h \
   /usr/local/include/vulkan/vulkan.h \
   /usr/local/include/vulkan/vk_platform.h \
@@ -837,6 +842,16 @@ CMakeFiles/scop.dir/src/resources/Image/Image.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks/OpenGL.framework/Headers/gltypes.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks/OpenGL.framework/Headers/OpenGLAvailability.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/os/availability.h \
+  /Users/albaud/Documents/Programation/42/scop/src/vulkan/VulkanContext.hpp \
+  /Users/albaud/Documents/Programation/42/scop/src/vulkan/Window/Window.hpp \
+  /Users/albaud/Documents/Programation/42/scop/src/vulkan/SwapChain/SwapChain.hpp \
+  /Users/albaud/Documents/Programation/42/scop/src/vulkan/Pipeline/Pipeline.hpp \
+  /Users/albaud/Documents/Programation/42/scop/src/vulkan/Pipeline/../SwapChain/SwapChain.hpp \
+  /Users/albaud/Documents/Programation/42/scop/src/vulkan/CommandBuffer/SingleUseCommandBuffer.hpp \
+  /Users/albaud/Documents/Programation/42/scop/src/vulkan/QueueFamilyIndices/QueueFamilyIndices.hpp \
+  /Users/albaud/Documents/Programation/42/scop/src/vulkan/Inputs/Inputs.hpp \
+  /Users/albaud/Documents/Programation/42/scop/src/vulkan/Inputs/InputEvent.hpp \
+  /Users/albaud/Documents/Programation/42/scop/src/math/Vertex/Vertex.hpp \
   /opt/homebrew/opt/glm/include/glm/glm.hpp \
   /opt/homebrew/opt/glm/include/glm/detail/_fixes.hpp \
   /opt/homebrew/opt/glm/include/glm/detail/setup.hpp \
@@ -993,39 +1008,6 @@ CMakeFiles/scop.dir/src/resources/Image/Image.cpp.o: \
   /opt/homebrew/opt/glm/include/glm/vector_relational.hpp \
   /opt/homebrew/opt/glm/include/glm/integer.hpp \
   /opt/homebrew/opt/glm/include/glm/detail/func_integer.inl \
-  /opt/homebrew/opt/glm/include/glm/gtc/matrix_transform.hpp \
-  /opt/homebrew/opt/glm/include/glm/gtc/../mat4x4.hpp \
-  /opt/homebrew/opt/glm/include/glm/gtc/../vec2.hpp \
-  /opt/homebrew/opt/glm/include/glm/gtc/../vec3.hpp \
-  /opt/homebrew/opt/glm/include/glm/gtc/../vec4.hpp \
-  /opt/homebrew/opt/glm/include/glm/gtc/../ext/matrix_projection.hpp \
-  /opt/homebrew/opt/glm/include/glm/./ext/../gtc/constants.hpp \
-  /opt/homebrew/opt/glm/include/glm/gtc/../ext/scalar_constants.hpp \
-  /opt/homebrew/opt/glm/include/glm/./ext/scalar_constants.inl \
-  /opt/homebrew/opt/glm/include/glm/gtc/constants.inl \
-  /opt/homebrew/opt/glm/include/glm/./ext/../geometric.hpp \
-  /opt/homebrew/opt/glm/include/glm/./ext/../trigonometric.hpp \
-  /opt/homebrew/opt/glm/include/glm/./ext/../matrix.hpp \
-  /opt/homebrew/opt/glm/include/glm/./ext/matrix_projection.inl \
-  /opt/homebrew/opt/glm/include/glm/gtc/../ext/matrix_clip_space.hpp \
-  /opt/homebrew/opt/glm/include/glm/./ext/../ext/scalar_constants.hpp \
-  /opt/homebrew/opt/glm/include/glm/./ext/matrix_clip_space.inl \
-  /opt/homebrew/opt/glm/include/glm/gtc/../ext/matrix_transform.hpp \
-  /opt/homebrew/opt/glm/include/glm/./ext/matrix_transform.inl \
-  /opt/homebrew/opt/glm/include/glm/gtc/matrix_transform.inl \
-  /opt/homebrew/opt/glm/include/glm/gtc/../geometric.hpp \
-  /opt/homebrew/opt/glm/include/glm/gtc/../trigonometric.hpp \
-  /opt/homebrew/opt/glm/include/glm/gtc/../matrix.hpp \
-  /Users/albaud/Documents/Programation/42/scop/src/vulkan/VulkanContext.hpp \
-  /Users/albaud/Documents/Programation/42/scop/src/vulkan/Window/Window.hpp \
-  /Users/albaud/Documents/Programation/42/scop/src/vulkan/SwapChain/SwapChain.hpp \
-  /Users/albaud/Documents/Programation/42/scop/src/vulkan/Pipeline/Pipeline.hpp \
-  /Users/albaud/Documents/Programation/42/scop/src/vulkan/Pipeline/../SwapChain/SwapChain.hpp \
-  /Users/albaud/Documents/Programation/42/scop/src/vulkan/CommandBuffer/SingleUseCommandBuffer.hpp \
-  /Users/albaud/Documents/Programation/42/scop/src/vulkan/QueueFamilyIndices/QueueFamilyIndices.hpp \
-  /Users/albaud/Documents/Programation/42/scop/src/vulkan/Inputs/Inputs.hpp \
-  /Users/albaud/Documents/Programation/42/scop/src/vulkan/Inputs/InputEvent.hpp \
-  /Users/albaud/Documents/Programation/42/scop/src/math/Vertex/Vertex.hpp \
   /Users/albaud/Documents/Programation/42/scop/src/utils.hpp \
   /Users/albaud/Documents/Programation/42/scop/src/loader/PPM.hpp \
   /Users/albaud/Documents/Programation/42/scop/src/shaders/Uniform/Camera.hpp \

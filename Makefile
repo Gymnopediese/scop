@@ -249,6 +249,30 @@ src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/scop.dir/build.make CMakeFiles/scop.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+src/math/math.o: src/math/math.cpp.o
+.PHONY : src/math/math.o
+
+# target to build an object file
+src/math/math.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/scop.dir/build.make CMakeFiles/scop.dir/src/math/math.cpp.o
+.PHONY : src/math/math.cpp.o
+
+src/math/math.i: src/math/math.cpp.i
+.PHONY : src/math/math.i
+
+# target to preprocess a source file
+src/math/math.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/scop.dir/build.make CMakeFiles/scop.dir/src/math/math.cpp.i
+.PHONY : src/math/math.cpp.i
+
+src/math/math.s: src/math/math.cpp.s
+.PHONY : src/math/math.s
+
+# target to generate assembly for a file
+src/math/math.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/scop.dir/build.make CMakeFiles/scop.dir/src/math/math.cpp.s
+.PHONY : src/math/math.cpp.s
+
 src/renderer/DescriptorManager/DescriptorManager.o: src/renderer/DescriptorManager/DescriptorManager.cpp.o
 .PHONY : src/renderer/DescriptorManager/DescriptorManager.o
 
@@ -873,6 +897,9 @@ help:
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/math/math.o"
+	@echo "... src/math/math.i"
+	@echo "... src/math/math.s"
 	@echo "... src/renderer/DescriptorManager/DescriptorManager.o"
 	@echo "... src/renderer/DescriptorManager/DescriptorManager.i"
 	@echo "... src/renderer/DescriptorManager/DescriptorManager.s"

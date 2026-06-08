@@ -10,4 +10,6 @@ Surface::Surface(VulkanContext &ctx) : ctx(ctx) {
 
 Surface::~Surface() {
     vkDestroySurfaceKHR(*ctx.instance, surface, nullptr);
+
+    std::cout << "[Destroying] Surface" << std::endl;
 }

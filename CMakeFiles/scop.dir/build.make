@@ -156,10 +156,24 @@ CMakeFiles/scop.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/scop.dir/src/main.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/albaud/Documents/Programation/42/scop/src/main.cpp -o CMakeFiles/scop.dir/src/main.cpp.s
 
+CMakeFiles/scop.dir/src/math/math.cpp.o: CMakeFiles/scop.dir/flags.make
+CMakeFiles/scop.dir/src/math/math.cpp.o: src/math/math.cpp
+CMakeFiles/scop.dir/src/math/math.cpp.o: CMakeFiles/scop.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/albaud/Documents/Programation/42/scop/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/scop.dir/src/math/math.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/scop.dir/src/math/math.cpp.o -MF CMakeFiles/scop.dir/src/math/math.cpp.o.d -o CMakeFiles/scop.dir/src/math/math.cpp.o -c /Users/albaud/Documents/Programation/42/scop/src/math/math.cpp
+
+CMakeFiles/scop.dir/src/math/math.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/scop.dir/src/math/math.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/albaud/Documents/Programation/42/scop/src/math/math.cpp > CMakeFiles/scop.dir/src/math/math.cpp.i
+
+CMakeFiles/scop.dir/src/math/math.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/scop.dir/src/math/math.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/albaud/Documents/Programation/42/scop/src/math/math.cpp -o CMakeFiles/scop.dir/src/math/math.cpp.s
+
 CMakeFiles/scop.dir/src/renderer/DescriptorManager/DescriptorManager.cpp.o: CMakeFiles/scop.dir/flags.make
 CMakeFiles/scop.dir/src/renderer/DescriptorManager/DescriptorManager.cpp.o: src/renderer/DescriptorManager/DescriptorManager.cpp
 CMakeFiles/scop.dir/src/renderer/DescriptorManager/DescriptorManager.cpp.o: CMakeFiles/scop.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/albaud/Documents/Programation/42/scop/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/scop.dir/src/renderer/DescriptorManager/DescriptorManager.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/albaud/Documents/Programation/42/scop/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/scop.dir/src/renderer/DescriptorManager/DescriptorManager.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/scop.dir/src/renderer/DescriptorManager/DescriptorManager.cpp.o -MF CMakeFiles/scop.dir/src/renderer/DescriptorManager/DescriptorManager.cpp.o.d -o CMakeFiles/scop.dir/src/renderer/DescriptorManager/DescriptorManager.cpp.o -c /Users/albaud/Documents/Programation/42/scop/src/renderer/DescriptorManager/DescriptorManager.cpp
 
 CMakeFiles/scop.dir/src/renderer/DescriptorManager/DescriptorManager.cpp.i: cmake_force
@@ -173,7 +187,7 @@ CMakeFiles/scop.dir/src/renderer/DescriptorManager/DescriptorManager.cpp.s: cmak
 CMakeFiles/scop.dir/src/renderer/FrameData/FrameData.cpp.o: CMakeFiles/scop.dir/flags.make
 CMakeFiles/scop.dir/src/renderer/FrameData/FrameData.cpp.o: src/renderer/FrameData/FrameData.cpp
 CMakeFiles/scop.dir/src/renderer/FrameData/FrameData.cpp.o: CMakeFiles/scop.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/albaud/Documents/Programation/42/scop/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/scop.dir/src/renderer/FrameData/FrameData.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/albaud/Documents/Programation/42/scop/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/scop.dir/src/renderer/FrameData/FrameData.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/scop.dir/src/renderer/FrameData/FrameData.cpp.o -MF CMakeFiles/scop.dir/src/renderer/FrameData/FrameData.cpp.o.d -o CMakeFiles/scop.dir/src/renderer/FrameData/FrameData.cpp.o -c /Users/albaud/Documents/Programation/42/scop/src/renderer/FrameData/FrameData.cpp
 
 CMakeFiles/scop.dir/src/renderer/FrameData/FrameData.cpp.i: cmake_force
@@ -187,7 +201,7 @@ CMakeFiles/scop.dir/src/renderer/FrameData/FrameData.cpp.s: cmake_force
 CMakeFiles/scop.dir/src/renderer/RenderPass/RenderPass.cpp.o: CMakeFiles/scop.dir/flags.make
 CMakeFiles/scop.dir/src/renderer/RenderPass/RenderPass.cpp.o: src/renderer/RenderPass/RenderPass.cpp
 CMakeFiles/scop.dir/src/renderer/RenderPass/RenderPass.cpp.o: CMakeFiles/scop.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/albaud/Documents/Programation/42/scop/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/scop.dir/src/renderer/RenderPass/RenderPass.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/albaud/Documents/Programation/42/scop/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/scop.dir/src/renderer/RenderPass/RenderPass.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/scop.dir/src/renderer/RenderPass/RenderPass.cpp.o -MF CMakeFiles/scop.dir/src/renderer/RenderPass/RenderPass.cpp.o.d -o CMakeFiles/scop.dir/src/renderer/RenderPass/RenderPass.cpp.o -c /Users/albaud/Documents/Programation/42/scop/src/renderer/RenderPass/RenderPass.cpp
 
 CMakeFiles/scop.dir/src/renderer/RenderPass/RenderPass.cpp.i: cmake_force
@@ -201,7 +215,7 @@ CMakeFiles/scop.dir/src/renderer/RenderPass/RenderPass.cpp.s: cmake_force
 CMakeFiles/scop.dir/src/renderer/Renderer/Renderer.cpp.o: CMakeFiles/scop.dir/flags.make
 CMakeFiles/scop.dir/src/renderer/Renderer/Renderer.cpp.o: src/renderer/Renderer/Renderer.cpp
 CMakeFiles/scop.dir/src/renderer/Renderer/Renderer.cpp.o: CMakeFiles/scop.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/albaud/Documents/Programation/42/scop/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/scop.dir/src/renderer/Renderer/Renderer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/albaud/Documents/Programation/42/scop/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/scop.dir/src/renderer/Renderer/Renderer.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/scop.dir/src/renderer/Renderer/Renderer.cpp.o -MF CMakeFiles/scop.dir/src/renderer/Renderer/Renderer.cpp.o.d -o CMakeFiles/scop.dir/src/renderer/Renderer/Renderer.cpp.o -c /Users/albaud/Documents/Programation/42/scop/src/renderer/Renderer/Renderer.cpp
 
 CMakeFiles/scop.dir/src/renderer/Renderer/Renderer.cpp.i: cmake_force
@@ -215,7 +229,7 @@ CMakeFiles/scop.dir/src/renderer/Renderer/Renderer.cpp.s: cmake_force
 CMakeFiles/scop.dir/src/resources/Buffer/Buffer.cpp.o: CMakeFiles/scop.dir/flags.make
 CMakeFiles/scop.dir/src/resources/Buffer/Buffer.cpp.o: src/resources/Buffer/Buffer.cpp
 CMakeFiles/scop.dir/src/resources/Buffer/Buffer.cpp.o: CMakeFiles/scop.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/albaud/Documents/Programation/42/scop/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/scop.dir/src/resources/Buffer/Buffer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/albaud/Documents/Programation/42/scop/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/scop.dir/src/resources/Buffer/Buffer.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/scop.dir/src/resources/Buffer/Buffer.cpp.o -MF CMakeFiles/scop.dir/src/resources/Buffer/Buffer.cpp.o.d -o CMakeFiles/scop.dir/src/resources/Buffer/Buffer.cpp.o -c /Users/albaud/Documents/Programation/42/scop/src/resources/Buffer/Buffer.cpp
 
 CMakeFiles/scop.dir/src/resources/Buffer/Buffer.cpp.i: cmake_force
@@ -229,7 +243,7 @@ CMakeFiles/scop.dir/src/resources/Buffer/Buffer.cpp.s: cmake_force
 CMakeFiles/scop.dir/src/resources/DepthBuffer/DepthBuffer.cpp.o: CMakeFiles/scop.dir/flags.make
 CMakeFiles/scop.dir/src/resources/DepthBuffer/DepthBuffer.cpp.o: src/resources/DepthBuffer/DepthBuffer.cpp
 CMakeFiles/scop.dir/src/resources/DepthBuffer/DepthBuffer.cpp.o: CMakeFiles/scop.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/albaud/Documents/Programation/42/scop/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/scop.dir/src/resources/DepthBuffer/DepthBuffer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/albaud/Documents/Programation/42/scop/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/scop.dir/src/resources/DepthBuffer/DepthBuffer.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/scop.dir/src/resources/DepthBuffer/DepthBuffer.cpp.o -MF CMakeFiles/scop.dir/src/resources/DepthBuffer/DepthBuffer.cpp.o.d -o CMakeFiles/scop.dir/src/resources/DepthBuffer/DepthBuffer.cpp.o -c /Users/albaud/Documents/Programation/42/scop/src/resources/DepthBuffer/DepthBuffer.cpp
 
 CMakeFiles/scop.dir/src/resources/DepthBuffer/DepthBuffer.cpp.i: cmake_force
@@ -243,7 +257,7 @@ CMakeFiles/scop.dir/src/resources/DepthBuffer/DepthBuffer.cpp.s: cmake_force
 CMakeFiles/scop.dir/src/resources/Image/Image.cpp.o: CMakeFiles/scop.dir/flags.make
 CMakeFiles/scop.dir/src/resources/Image/Image.cpp.o: src/resources/Image/Image.cpp
 CMakeFiles/scop.dir/src/resources/Image/Image.cpp.o: CMakeFiles/scop.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/albaud/Documents/Programation/42/scop/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/scop.dir/src/resources/Image/Image.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/albaud/Documents/Programation/42/scop/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/scop.dir/src/resources/Image/Image.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/scop.dir/src/resources/Image/Image.cpp.o -MF CMakeFiles/scop.dir/src/resources/Image/Image.cpp.o.d -o CMakeFiles/scop.dir/src/resources/Image/Image.cpp.o -c /Users/albaud/Documents/Programation/42/scop/src/resources/Image/Image.cpp
 
 CMakeFiles/scop.dir/src/resources/Image/Image.cpp.i: cmake_force
@@ -257,7 +271,7 @@ CMakeFiles/scop.dir/src/resources/Image/Image.cpp.s: cmake_force
 CMakeFiles/scop.dir/src/resources/ImageView/ImageView.cpp.o: CMakeFiles/scop.dir/flags.make
 CMakeFiles/scop.dir/src/resources/ImageView/ImageView.cpp.o: src/resources/ImageView/ImageView.cpp
 CMakeFiles/scop.dir/src/resources/ImageView/ImageView.cpp.o: CMakeFiles/scop.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/albaud/Documents/Programation/42/scop/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/scop.dir/src/resources/ImageView/ImageView.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/albaud/Documents/Programation/42/scop/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/scop.dir/src/resources/ImageView/ImageView.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/scop.dir/src/resources/ImageView/ImageView.cpp.o -MF CMakeFiles/scop.dir/src/resources/ImageView/ImageView.cpp.o.d -o CMakeFiles/scop.dir/src/resources/ImageView/ImageView.cpp.o -c /Users/albaud/Documents/Programation/42/scop/src/resources/ImageView/ImageView.cpp
 
 CMakeFiles/scop.dir/src/resources/ImageView/ImageView.cpp.i: cmake_force
@@ -271,7 +285,7 @@ CMakeFiles/scop.dir/src/resources/ImageView/ImageView.cpp.s: cmake_force
 CMakeFiles/scop.dir/src/resources/Sampler/Sampler.cpp.o: CMakeFiles/scop.dir/flags.make
 CMakeFiles/scop.dir/src/resources/Sampler/Sampler.cpp.o: src/resources/Sampler/Sampler.cpp
 CMakeFiles/scop.dir/src/resources/Sampler/Sampler.cpp.o: CMakeFiles/scop.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/albaud/Documents/Programation/42/scop/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/scop.dir/src/resources/Sampler/Sampler.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/albaud/Documents/Programation/42/scop/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/scop.dir/src/resources/Sampler/Sampler.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/scop.dir/src/resources/Sampler/Sampler.cpp.o -MF CMakeFiles/scop.dir/src/resources/Sampler/Sampler.cpp.o.d -o CMakeFiles/scop.dir/src/resources/Sampler/Sampler.cpp.o -c /Users/albaud/Documents/Programation/42/scop/src/resources/Sampler/Sampler.cpp
 
 CMakeFiles/scop.dir/src/resources/Sampler/Sampler.cpp.i: cmake_force
@@ -285,7 +299,7 @@ CMakeFiles/scop.dir/src/resources/Sampler/Sampler.cpp.s: cmake_force
 CMakeFiles/scop.dir/src/scene/Camera3D/Camera3D.cpp.o: CMakeFiles/scop.dir/flags.make
 CMakeFiles/scop.dir/src/scene/Camera3D/Camera3D.cpp.o: src/scene/Camera3D/Camera3D.cpp
 CMakeFiles/scop.dir/src/scene/Camera3D/Camera3D.cpp.o: CMakeFiles/scop.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/albaud/Documents/Programation/42/scop/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/scop.dir/src/scene/Camera3D/Camera3D.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/albaud/Documents/Programation/42/scop/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/scop.dir/src/scene/Camera3D/Camera3D.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/scop.dir/src/scene/Camera3D/Camera3D.cpp.o -MF CMakeFiles/scop.dir/src/scene/Camera3D/Camera3D.cpp.o.d -o CMakeFiles/scop.dir/src/scene/Camera3D/Camera3D.cpp.o -c /Users/albaud/Documents/Programation/42/scop/src/scene/Camera3D/Camera3D.cpp
 
 CMakeFiles/scop.dir/src/scene/Camera3D/Camera3D.cpp.i: cmake_force
@@ -299,7 +313,7 @@ CMakeFiles/scop.dir/src/scene/Camera3D/Camera3D.cpp.s: cmake_force
 CMakeFiles/scop.dir/src/scene/Scene3D/Scene3D.cpp.o: CMakeFiles/scop.dir/flags.make
 CMakeFiles/scop.dir/src/scene/Scene3D/Scene3D.cpp.o: src/scene/Scene3D/Scene3D.cpp
 CMakeFiles/scop.dir/src/scene/Scene3D/Scene3D.cpp.o: CMakeFiles/scop.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/albaud/Documents/Programation/42/scop/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/scop.dir/src/scene/Scene3D/Scene3D.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/albaud/Documents/Programation/42/scop/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/scop.dir/src/scene/Scene3D/Scene3D.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/scop.dir/src/scene/Scene3D/Scene3D.cpp.o -MF CMakeFiles/scop.dir/src/scene/Scene3D/Scene3D.cpp.o.d -o CMakeFiles/scop.dir/src/scene/Scene3D/Scene3D.cpp.o -c /Users/albaud/Documents/Programation/42/scop/src/scene/Scene3D/Scene3D.cpp
 
 CMakeFiles/scop.dir/src/scene/Scene3D/Scene3D.cpp.i: cmake_force
@@ -313,7 +327,7 @@ CMakeFiles/scop.dir/src/scene/Scene3D/Scene3D.cpp.s: cmake_force
 CMakeFiles/scop.dir/src/utils.cpp.o: CMakeFiles/scop.dir/flags.make
 CMakeFiles/scop.dir/src/utils.cpp.o: src/utils.cpp
 CMakeFiles/scop.dir/src/utils.cpp.o: CMakeFiles/scop.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/albaud/Documents/Programation/42/scop/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/scop.dir/src/utils.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/albaud/Documents/Programation/42/scop/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/scop.dir/src/utils.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/scop.dir/src/utils.cpp.o -MF CMakeFiles/scop.dir/src/utils.cpp.o.d -o CMakeFiles/scop.dir/src/utils.cpp.o -c /Users/albaud/Documents/Programation/42/scop/src/utils.cpp
 
 CMakeFiles/scop.dir/src/utils.cpp.i: cmake_force
@@ -327,7 +341,7 @@ CMakeFiles/scop.dir/src/utils.cpp.s: cmake_force
 CMakeFiles/scop.dir/src/vulkan/CommandBuffer/SingleUseCommandBuffer.cpp.o: CMakeFiles/scop.dir/flags.make
 CMakeFiles/scop.dir/src/vulkan/CommandBuffer/SingleUseCommandBuffer.cpp.o: src/vulkan/CommandBuffer/SingleUseCommandBuffer.cpp
 CMakeFiles/scop.dir/src/vulkan/CommandBuffer/SingleUseCommandBuffer.cpp.o: CMakeFiles/scop.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/albaud/Documents/Programation/42/scop/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/scop.dir/src/vulkan/CommandBuffer/SingleUseCommandBuffer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/albaud/Documents/Programation/42/scop/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/scop.dir/src/vulkan/CommandBuffer/SingleUseCommandBuffer.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/scop.dir/src/vulkan/CommandBuffer/SingleUseCommandBuffer.cpp.o -MF CMakeFiles/scop.dir/src/vulkan/CommandBuffer/SingleUseCommandBuffer.cpp.o.d -o CMakeFiles/scop.dir/src/vulkan/CommandBuffer/SingleUseCommandBuffer.cpp.o -c /Users/albaud/Documents/Programation/42/scop/src/vulkan/CommandBuffer/SingleUseCommandBuffer.cpp
 
 CMakeFiles/scop.dir/src/vulkan/CommandBuffer/SingleUseCommandBuffer.cpp.i: cmake_force
@@ -341,7 +355,7 @@ CMakeFiles/scop.dir/src/vulkan/CommandBuffer/SingleUseCommandBuffer.cpp.s: cmake
 CMakeFiles/scop.dir/src/vulkan/Device/Decive.cpp.o: CMakeFiles/scop.dir/flags.make
 CMakeFiles/scop.dir/src/vulkan/Device/Decive.cpp.o: src/vulkan/Device/Decive.cpp
 CMakeFiles/scop.dir/src/vulkan/Device/Decive.cpp.o: CMakeFiles/scop.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/albaud/Documents/Programation/42/scop/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/scop.dir/src/vulkan/Device/Decive.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/albaud/Documents/Programation/42/scop/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/scop.dir/src/vulkan/Device/Decive.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/scop.dir/src/vulkan/Device/Decive.cpp.o -MF CMakeFiles/scop.dir/src/vulkan/Device/Decive.cpp.o.d -o CMakeFiles/scop.dir/src/vulkan/Device/Decive.cpp.o -c /Users/albaud/Documents/Programation/42/scop/src/vulkan/Device/Decive.cpp
 
 CMakeFiles/scop.dir/src/vulkan/Device/Decive.cpp.i: cmake_force
@@ -355,7 +369,7 @@ CMakeFiles/scop.dir/src/vulkan/Device/Decive.cpp.s: cmake_force
 CMakeFiles/scop.dir/src/vulkan/Inputs/InputEvent.cpp.o: CMakeFiles/scop.dir/flags.make
 CMakeFiles/scop.dir/src/vulkan/Inputs/InputEvent.cpp.o: src/vulkan/Inputs/InputEvent.cpp
 CMakeFiles/scop.dir/src/vulkan/Inputs/InputEvent.cpp.o: CMakeFiles/scop.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/albaud/Documents/Programation/42/scop/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/scop.dir/src/vulkan/Inputs/InputEvent.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/albaud/Documents/Programation/42/scop/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/scop.dir/src/vulkan/Inputs/InputEvent.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/scop.dir/src/vulkan/Inputs/InputEvent.cpp.o -MF CMakeFiles/scop.dir/src/vulkan/Inputs/InputEvent.cpp.o.d -o CMakeFiles/scop.dir/src/vulkan/Inputs/InputEvent.cpp.o -c /Users/albaud/Documents/Programation/42/scop/src/vulkan/Inputs/InputEvent.cpp
 
 CMakeFiles/scop.dir/src/vulkan/Inputs/InputEvent.cpp.i: cmake_force
@@ -369,7 +383,7 @@ CMakeFiles/scop.dir/src/vulkan/Inputs/InputEvent.cpp.s: cmake_force
 CMakeFiles/scop.dir/src/vulkan/Inputs/Inputs.cpp.o: CMakeFiles/scop.dir/flags.make
 CMakeFiles/scop.dir/src/vulkan/Inputs/Inputs.cpp.o: src/vulkan/Inputs/Inputs.cpp
 CMakeFiles/scop.dir/src/vulkan/Inputs/Inputs.cpp.o: CMakeFiles/scop.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/albaud/Documents/Programation/42/scop/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/scop.dir/src/vulkan/Inputs/Inputs.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/albaud/Documents/Programation/42/scop/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/scop.dir/src/vulkan/Inputs/Inputs.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/scop.dir/src/vulkan/Inputs/Inputs.cpp.o -MF CMakeFiles/scop.dir/src/vulkan/Inputs/Inputs.cpp.o.d -o CMakeFiles/scop.dir/src/vulkan/Inputs/Inputs.cpp.o -c /Users/albaud/Documents/Programation/42/scop/src/vulkan/Inputs/Inputs.cpp
 
 CMakeFiles/scop.dir/src/vulkan/Inputs/Inputs.cpp.i: cmake_force
@@ -383,7 +397,7 @@ CMakeFiles/scop.dir/src/vulkan/Inputs/Inputs.cpp.s: cmake_force
 CMakeFiles/scop.dir/src/vulkan/Instance/Instance.cpp.o: CMakeFiles/scop.dir/flags.make
 CMakeFiles/scop.dir/src/vulkan/Instance/Instance.cpp.o: src/vulkan/Instance/Instance.cpp
 CMakeFiles/scop.dir/src/vulkan/Instance/Instance.cpp.o: CMakeFiles/scop.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/albaud/Documents/Programation/42/scop/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/scop.dir/src/vulkan/Instance/Instance.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/albaud/Documents/Programation/42/scop/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/scop.dir/src/vulkan/Instance/Instance.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/scop.dir/src/vulkan/Instance/Instance.cpp.o -MF CMakeFiles/scop.dir/src/vulkan/Instance/Instance.cpp.o.d -o CMakeFiles/scop.dir/src/vulkan/Instance/Instance.cpp.o -c /Users/albaud/Documents/Programation/42/scop/src/vulkan/Instance/Instance.cpp
 
 CMakeFiles/scop.dir/src/vulkan/Instance/Instance.cpp.i: cmake_force
@@ -397,7 +411,7 @@ CMakeFiles/scop.dir/src/vulkan/Instance/Instance.cpp.s: cmake_force
 CMakeFiles/scop.dir/src/vulkan/PhysicalDevice/PhysicalDevice.cpp.o: CMakeFiles/scop.dir/flags.make
 CMakeFiles/scop.dir/src/vulkan/PhysicalDevice/PhysicalDevice.cpp.o: src/vulkan/PhysicalDevice/PhysicalDevice.cpp
 CMakeFiles/scop.dir/src/vulkan/PhysicalDevice/PhysicalDevice.cpp.o: CMakeFiles/scop.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/albaud/Documents/Programation/42/scop/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/scop.dir/src/vulkan/PhysicalDevice/PhysicalDevice.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/albaud/Documents/Programation/42/scop/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object CMakeFiles/scop.dir/src/vulkan/PhysicalDevice/PhysicalDevice.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/scop.dir/src/vulkan/PhysicalDevice/PhysicalDevice.cpp.o -MF CMakeFiles/scop.dir/src/vulkan/PhysicalDevice/PhysicalDevice.cpp.o.d -o CMakeFiles/scop.dir/src/vulkan/PhysicalDevice/PhysicalDevice.cpp.o -c /Users/albaud/Documents/Programation/42/scop/src/vulkan/PhysicalDevice/PhysicalDevice.cpp
 
 CMakeFiles/scop.dir/src/vulkan/PhysicalDevice/PhysicalDevice.cpp.i: cmake_force
@@ -411,7 +425,7 @@ CMakeFiles/scop.dir/src/vulkan/PhysicalDevice/PhysicalDevice.cpp.s: cmake_force
 CMakeFiles/scop.dir/src/vulkan/Pipeline/Pipeline.cpp.o: CMakeFiles/scop.dir/flags.make
 CMakeFiles/scop.dir/src/vulkan/Pipeline/Pipeline.cpp.o: src/vulkan/Pipeline/Pipeline.cpp
 CMakeFiles/scop.dir/src/vulkan/Pipeline/Pipeline.cpp.o: CMakeFiles/scop.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/albaud/Documents/Programation/42/scop/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object CMakeFiles/scop.dir/src/vulkan/Pipeline/Pipeline.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/albaud/Documents/Programation/42/scop/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object CMakeFiles/scop.dir/src/vulkan/Pipeline/Pipeline.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/scop.dir/src/vulkan/Pipeline/Pipeline.cpp.o -MF CMakeFiles/scop.dir/src/vulkan/Pipeline/Pipeline.cpp.o.d -o CMakeFiles/scop.dir/src/vulkan/Pipeline/Pipeline.cpp.o -c /Users/albaud/Documents/Programation/42/scop/src/vulkan/Pipeline/Pipeline.cpp
 
 CMakeFiles/scop.dir/src/vulkan/Pipeline/Pipeline.cpp.i: cmake_force
@@ -425,7 +439,7 @@ CMakeFiles/scop.dir/src/vulkan/Pipeline/Pipeline.cpp.s: cmake_force
 CMakeFiles/scop.dir/src/vulkan/QueueFamilyIndices/QueueFamilyIndices.cpp.o: CMakeFiles/scop.dir/flags.make
 CMakeFiles/scop.dir/src/vulkan/QueueFamilyIndices/QueueFamilyIndices.cpp.o: src/vulkan/QueueFamilyIndices/QueueFamilyIndices.cpp
 CMakeFiles/scop.dir/src/vulkan/QueueFamilyIndices/QueueFamilyIndices.cpp.o: CMakeFiles/scop.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/albaud/Documents/Programation/42/scop/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object CMakeFiles/scop.dir/src/vulkan/QueueFamilyIndices/QueueFamilyIndices.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/albaud/Documents/Programation/42/scop/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building CXX object CMakeFiles/scop.dir/src/vulkan/QueueFamilyIndices/QueueFamilyIndices.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/scop.dir/src/vulkan/QueueFamilyIndices/QueueFamilyIndices.cpp.o -MF CMakeFiles/scop.dir/src/vulkan/QueueFamilyIndices/QueueFamilyIndices.cpp.o.d -o CMakeFiles/scop.dir/src/vulkan/QueueFamilyIndices/QueueFamilyIndices.cpp.o -c /Users/albaud/Documents/Programation/42/scop/src/vulkan/QueueFamilyIndices/QueueFamilyIndices.cpp
 
 CMakeFiles/scop.dir/src/vulkan/QueueFamilyIndices/QueueFamilyIndices.cpp.i: cmake_force
@@ -439,7 +453,7 @@ CMakeFiles/scop.dir/src/vulkan/QueueFamilyIndices/QueueFamilyIndices.cpp.s: cmak
 CMakeFiles/scop.dir/src/vulkan/Surface/Surface.cpp.o: CMakeFiles/scop.dir/flags.make
 CMakeFiles/scop.dir/src/vulkan/Surface/Surface.cpp.o: src/vulkan/Surface/Surface.cpp
 CMakeFiles/scop.dir/src/vulkan/Surface/Surface.cpp.o: CMakeFiles/scop.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/albaud/Documents/Programation/42/scop/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building CXX object CMakeFiles/scop.dir/src/vulkan/Surface/Surface.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/albaud/Documents/Programation/42/scop/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building CXX object CMakeFiles/scop.dir/src/vulkan/Surface/Surface.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/scop.dir/src/vulkan/Surface/Surface.cpp.o -MF CMakeFiles/scop.dir/src/vulkan/Surface/Surface.cpp.o.d -o CMakeFiles/scop.dir/src/vulkan/Surface/Surface.cpp.o -c /Users/albaud/Documents/Programation/42/scop/src/vulkan/Surface/Surface.cpp
 
 CMakeFiles/scop.dir/src/vulkan/Surface/Surface.cpp.i: cmake_force
@@ -453,7 +467,7 @@ CMakeFiles/scop.dir/src/vulkan/Surface/Surface.cpp.s: cmake_force
 CMakeFiles/scop.dir/src/vulkan/SwapChain/SwapchainChooser.cpp.o: CMakeFiles/scop.dir/flags.make
 CMakeFiles/scop.dir/src/vulkan/SwapChain/SwapchainChooser.cpp.o: src/vulkan/SwapChain/SwapchainChooser.cpp
 CMakeFiles/scop.dir/src/vulkan/SwapChain/SwapchainChooser.cpp.o: CMakeFiles/scop.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/albaud/Documents/Programation/42/scop/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building CXX object CMakeFiles/scop.dir/src/vulkan/SwapChain/SwapchainChooser.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/albaud/Documents/Programation/42/scop/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building CXX object CMakeFiles/scop.dir/src/vulkan/SwapChain/SwapchainChooser.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/scop.dir/src/vulkan/SwapChain/SwapchainChooser.cpp.o -MF CMakeFiles/scop.dir/src/vulkan/SwapChain/SwapchainChooser.cpp.o.d -o CMakeFiles/scop.dir/src/vulkan/SwapChain/SwapchainChooser.cpp.o -c /Users/albaud/Documents/Programation/42/scop/src/vulkan/SwapChain/SwapchainChooser.cpp
 
 CMakeFiles/scop.dir/src/vulkan/SwapChain/SwapchainChooser.cpp.i: cmake_force
@@ -467,7 +481,7 @@ CMakeFiles/scop.dir/src/vulkan/SwapChain/SwapchainChooser.cpp.s: cmake_force
 CMakeFiles/scop.dir/src/vulkan/ValidationLayers/ValidationLayers.cpp.o: CMakeFiles/scop.dir/flags.make
 CMakeFiles/scop.dir/src/vulkan/ValidationLayers/ValidationLayers.cpp.o: src/vulkan/ValidationLayers/ValidationLayers.cpp
 CMakeFiles/scop.dir/src/vulkan/ValidationLayers/ValidationLayers.cpp.o: CMakeFiles/scop.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/albaud/Documents/Programation/42/scop/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building CXX object CMakeFiles/scop.dir/src/vulkan/ValidationLayers/ValidationLayers.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/albaud/Documents/Programation/42/scop/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building CXX object CMakeFiles/scop.dir/src/vulkan/ValidationLayers/ValidationLayers.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/scop.dir/src/vulkan/ValidationLayers/ValidationLayers.cpp.o -MF CMakeFiles/scop.dir/src/vulkan/ValidationLayers/ValidationLayers.cpp.o.d -o CMakeFiles/scop.dir/src/vulkan/ValidationLayers/ValidationLayers.cpp.o -c /Users/albaud/Documents/Programation/42/scop/src/vulkan/ValidationLayers/ValidationLayers.cpp
 
 CMakeFiles/scop.dir/src/vulkan/ValidationLayers/ValidationLayers.cpp.i: cmake_force
@@ -481,7 +495,7 @@ CMakeFiles/scop.dir/src/vulkan/ValidationLayers/ValidationLayers.cpp.s: cmake_fo
 CMakeFiles/scop.dir/src/vulkan/Window/Window.cpp.o: CMakeFiles/scop.dir/flags.make
 CMakeFiles/scop.dir/src/vulkan/Window/Window.cpp.o: src/vulkan/Window/Window.cpp
 CMakeFiles/scop.dir/src/vulkan/Window/Window.cpp.o: CMakeFiles/scop.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/albaud/Documents/Programation/42/scop/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building CXX object CMakeFiles/scop.dir/src/vulkan/Window/Window.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/albaud/Documents/Programation/42/scop/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building CXX object CMakeFiles/scop.dir/src/vulkan/Window/Window.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/scop.dir/src/vulkan/Window/Window.cpp.o -MF CMakeFiles/scop.dir/src/vulkan/Window/Window.cpp.o.d -o CMakeFiles/scop.dir/src/vulkan/Window/Window.cpp.o -c /Users/albaud/Documents/Programation/42/scop/src/vulkan/Window/Window.cpp
 
 CMakeFiles/scop.dir/src/vulkan/Window/Window.cpp.i: cmake_force
@@ -500,6 +514,7 @@ scop_OBJECTS = \
 "CMakeFiles/scop.dir/src/loader/OBJ.cpp.o" \
 "CMakeFiles/scop.dir/src/loader/PPM.cpp.o" \
 "CMakeFiles/scop.dir/src/main.cpp.o" \
+"CMakeFiles/scop.dir/src/math/math.cpp.o" \
 "CMakeFiles/scop.dir/src/renderer/DescriptorManager/DescriptorManager.cpp.o" \
 "CMakeFiles/scop.dir/src/renderer/FrameData/FrameData.cpp.o" \
 "CMakeFiles/scop.dir/src/renderer/RenderPass/RenderPass.cpp.o" \
@@ -534,6 +549,7 @@ scop: CMakeFiles/scop.dir/src/assets/Texture/Texture.cpp.o
 scop: CMakeFiles/scop.dir/src/loader/OBJ.cpp.o
 scop: CMakeFiles/scop.dir/src/loader/PPM.cpp.o
 scop: CMakeFiles/scop.dir/src/main.cpp.o
+scop: CMakeFiles/scop.dir/src/math/math.cpp.o
 scop: CMakeFiles/scop.dir/src/renderer/DescriptorManager/DescriptorManager.cpp.o
 scop: CMakeFiles/scop.dir/src/renderer/FrameData/FrameData.cpp.o
 scop: CMakeFiles/scop.dir/src/renderer/RenderPass/RenderPass.cpp.o
@@ -561,7 +577,7 @@ scop: CMakeFiles/scop.dir/src/vulkan/Window/Window.cpp.o
 scop: CMakeFiles/scop.dir/build.make
 scop: /usr/local/lib/libvulkan.dylib
 scop: CMakeFiles/scop.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/albaud/Documents/Programation/42/scop/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Linking CXX executable scop"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/albaud/Documents/Programation/42/scop/CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Linking CXX executable scop"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/scop.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

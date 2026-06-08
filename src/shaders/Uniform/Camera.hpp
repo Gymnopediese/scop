@@ -4,8 +4,8 @@
 
 
 struct CameraBufferObject {
-    glm::mat4 model;
-    glm::mat4 view;
-    glm::mat4 proj;
-    glm::vec3 position;
+    mat4 model;
+    mat4 view;
+    mat4 proj;
+    vec3 position;
 };

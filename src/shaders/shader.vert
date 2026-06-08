@@ -9,6 +9,7 @@ layout(binding = 0) uniform UniformBufferObject {
 layout(binding = 1) uniform Transform3D {
     mat4 transform;
     int  has_texture;
+    int  shadow;
 } transform;
 
 layout(location = 0) in vec3 inPosition;
@@ -23,13 +24,9 @@ layout(location = 2) flat out int text;
 void main()
 {
     gl_Position = ubo.proj * ubo.view * ubo.model * transform.transform * vec4(inPosition, 1.0);
-    fragColor = inColor / max(0.3, gl_Position.z / 10.);
     fragTexCoord = inTexCoord;
     text = transform.has_texture;
-    if (text == 0)
-    {
+    fragColor = inColor;
 
-        fragColor = inColor / max(1, int(gl_Position.z * 2));
-        fragColor = inColor;
-    }
+    // if (transform.shadow == 1) fragColor = fragColor / max(0.3, gl_Position.z / 10.);
 }

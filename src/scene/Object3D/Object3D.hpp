@@ -16,21 +16,22 @@ class Object3D {
 
         std::vector<VkDescriptorSet>    descriptorSets;
         std::vector<Buffer*>            transformBuffers;
-        glm::vec3                       minBounds = glm::vec3( FLT_MAX);
-        glm::vec3                       maxBounds = glm::vec3(-FLT_MAX);
+        vec3                            minBounds = vec3( FLT_MAX);
+        vec3                            maxBounds = vec3(-FLT_MAX);
 
         Object3D(){};
-        ~Object3D(){};
+
+
+        ~Object3D(){
+            for (int i = 0; i < transformBuffers.size(); i++){
+                delete transformBuffers[i];
+            }
+            delete mesh;
+        };
 
 
 
         static Object3D *loadOBJ(VulkanContext &ctx, const std::string &path, const std::string &texture = ""){
-            const std::vector<glm::vec2> default_vt = {
-                {1, 0},
-                {0, 0},
-                {0, 1},
-                {1, 1}
-            };
             Object3D *object = new Object3D();
             object->mesh = new Mesh();
             if (texture != "")
@@ -74,12 +75,7 @@ class Object3D {
                         // default_index += 1;
                         vertex.uv = {
                             mesh.vertices[index.v].x,
-                            1 - mesh.vertices[index.v].y,
-                        };
-
-
-                        vertex.uv = {
-                            -100, -100
+                            mesh.vertices[index.v].y,
                         };
                     }
                     
@@ -90,21 +86,12 @@ class Object3D {
 
             }
 
-            for (Vertex &v :  object->mesh->vertices)
-            {
-                if (v.uv.x == -100)
-                {
-                    v.uv = {
-                        (v.pos.x - object->minBounds.x) / (object->maxBounds.x - object->minBounds.x),
-                        (v.pos.y - object->minBounds.y) / (object->maxBounds.y - object->minBounds.y)
-                    };
-                }
-            }
+
 
             return object;
         };
 
-        void color(glm::vec3 color)
+        void paint_shade(vec3 color)
         {
             int i = 0;
             for (Vertex &v : mesh->vertices)
@@ -114,11 +101,63 @@ class Object3D {
                 // mult = mult * 0.7 + 0.3;
                 v.modulate *= mult;
                 i += 1;
+                // v.modulate.print();
+            }
+        };
+
+        void paint(vec3 color)
+        {
+            int i = 0;
+            for (Vertex &v : mesh->vertices)
+            {
+                v.modulate = color;
             }
         };
 
 
-        void update(const int imageIndex) {
+        
+
+        void custum_uv(int mode)
+        {
+            for (Vertex &v :  mesh->vertices)
+            {
+
+                    if (mode == 0)
+                        v.uv = {
+                            (v.pos.x - minBounds.x) / (maxBounds.x - minBounds.x),
+                            (v.pos.y - minBounds.y) / (maxBounds.y - minBounds.y)
+                        };
+                    if (mode == 1)
+                        v.uv = {
+                            (v.pos.x - minBounds.x) / (maxBounds.x - minBounds.x),
+                            (v.pos.z - minBounds.z) / (maxBounds.z - minBounds.z)
+                        };
+                    if (mode == 2)
+                        v.uv = {
+                            (v.pos.z - minBounds.z) / (maxBounds.z - minBounds.z),
+                            (v.pos.y - minBounds.y) / (maxBounds.y - minBounds.y),
+                        };
+                    if (mode == 3)
+                        v.uv = {
+                            v.pos.x,
+                            v.pos.y,
+                        };
+                    if (mode == 4)
+                        v.uv = {
+                            v.pos.x,
+                            v.pos.z,
+                        };
+                    if (mode == 5)
+                        v.uv = {
+                            v.pos.y,
+                            v.pos.z,
+                        };
+
+            }
+        }
+
+
+        void update(const int imageIndex, float delta) {
             transformBuffers[imageIndex]->mapMemory(&transform, sizeof(Transform3D));
         };
 

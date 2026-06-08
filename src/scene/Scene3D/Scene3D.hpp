@@ -19,13 +19,7 @@ class Scene3D {
             testScene();
         };
         ~Scene3D();
-        void update(uint32_t currentImage) {
-            camera.update(currentImage);
-            for (Object3D *object : objects)
-            {
-                object->update(currentImage);
-            }
-        };
+        void update(uint32_t currentImage, float delta);
         void testScene();
         
     private:

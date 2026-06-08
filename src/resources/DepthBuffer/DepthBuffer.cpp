@@ -71,11 +71,12 @@ DepthBuffer::DepthBuffer(VulkanContext &ctx) : ctx(ctx)
 
     createImage(ctx.swapChain->swapChainExtent.width, ctx.swapChain->swapChainExtent.height, depthFormat, VK_IMAGE_TILING_OPTIMAL, VK_IMAGE_USAGE_DEPTH_STENCIL_ATTACHMENT_BIT, VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT, depthImage, depthImageMemory,ctx);
     depthImageView = new ImageView(depthImage, depthFormat, VK_IMAGE_ASPECT_DEPTH_BIT, ctx);
-
 }
 
 DepthBuffer::~DepthBuffer()
 {
+
+    std::cout << "[Destroying] Deuffer" << std::endl;
     delete depthImageView;
     vkDestroyImage(*ctx.device, depthImage, nullptr);
     vkFreeMemory(*ctx.device, depthImageMemory, nullptr);

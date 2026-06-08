@@ -15,14 +15,16 @@
 #include <functional>
 #include <cstdint>
 #include <limits>
+
+
+#include "math/math.hpp"
+
 // GLFW
 #define GLFW_INCLUDE_VULKAN
 #include <GLFW/glfw3.h>
 
 // Vulkan
 #include <vulkan/vulkan.h>
-#define GLM_FORCE_RADIANS
-#include <glm/glm.hpp>
-#include <glm/gtc/matrix_transform.hpp>
+
 
 #include <chrono>

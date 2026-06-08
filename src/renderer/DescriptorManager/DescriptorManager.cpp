@@ -338,9 +338,8 @@ void DescriptorManager::bindObjectBuffers(std::vector<Buffer*> &objectBuffers)
 DescriptorManager::~DescriptorManager()
 
 {
-
+    vkDestroyDescriptorSetLayout(*ctx.device, postProcessingLayout, nullptr);
     vkDestroyDescriptorSetLayout(*ctx.device, descriptorSetLayout, nullptr);
     vkDestroyDescriptorPool(*ctx.device, descriptorPool, nullptr);
-
 
 }

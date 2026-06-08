@@ -4,12 +4,8 @@
 
 SwapChainSupportDetails querySwapChainSupport(VkPhysicalDevice device, VulkanContext &ctx) {
     SwapChainSupportDetails details;
-
-
     
     vkGetPhysicalDeviceSurfaceCapabilitiesKHR(device, *ctx.surface, &details.capabilities);
-
-
 
     uint32_t formatCount;
     vkGetPhysicalDeviceSurfaceFormatsKHR(device, *ctx.surface, &formatCount, nullptr);
@@ -31,71 +27,13 @@ SwapChainSupportDetails querySwapChainSupport(VkPhysicalDevice device, VulkanCon
 }
 
 SwapChain::SwapChain(VulkanContext &ctx) : ctx(ctx)  {
-    Create();
-    ctx.swapChain = this;
-
-    std::cout << "[SWAPCHAIN] DONE" << std::endl;
-}
-
-
-void SwapChain::Create()
-{
     createSwapChain();
     std::cout << "[SWAPCHAIN] SWAPCHAIN CREATED" << std::endl;
     createImageViews();
     std::cout << "[SWAPCHAIN] IMAGE VIEWS CREATED" << std::endl;
+    ctx.swapChain = this;
+    std::cout << "[SWAPCHAIN] DONE" << std::endl;
 }
-
-
-    
-    // VkDescriptorSetLayoutBinding uboLayoutBinding{};
-    // uboLayoutBinding.binding = 0;
-    // uboLayoutBinding.descriptorType = VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER;
-    // uboLayoutBinding.descriptorCount = 1;
-
-    // uboLayoutBinding.stageFlags = VK_SHADER_STAGE_VERTEX_BIT;
-    // uboLayoutBinding.pImmutableSamplers = nullptr; // Optionnel
-
-    // VkDescriptorSetLayoutBinding samplerLayoutBinding{};
-    // samplerLayoutBinding.binding = 1;
-    // samplerLayoutBinding.descriptorCount = 1;
-    // samplerLayoutBinding.descriptorType = VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER;
-    // samplerLayoutBinding.pImmutableSamplers = nullptr;
-    // samplerLayoutBinding.stageFlags = VK_SHADER_STAGE_FRAGMENT_BIT;
-
-    // std::array<VkDescriptorSetLayoutBinding, 2> bindings = {uboLayoutBinding, samplerLayoutBinding};
-    // VkDescriptorSetLayoutCreateInfo layoutInfo{};
-    // layoutInfo.sType = VK_STRUCTURE_TYPE_DESCRIPTOR_SET_LAYOUT_CREATE_INFO;
-    // layoutInfo.bindingCount = static_cast<uint32_t>(bindings.size());
-    // layoutInfo.pBindings = bindings.data();
-
-    // if (vkCreateDescriptorSetLayout(*ctx.device, &layoutInfo, nullptr, &descriptorSetLayout) != VK_SUCCESS) {
-    //     throw std::runtime_error("echec de la creation d'un set de descripteurs!");
-    // }
-
-
-
-
-void SwapChain::ReCreate()
-{
-
-    int width = 0, height = 0;
-    glfwGetFramebufferSize(ctx.window->window, &width, &height);
-    while (width == 0 || height == 0) {
-        glfwGetFramebufferSize(ctx.window->window, &width, &height);
-        glfwWaitEvents();
-    }
-
-    vkDeviceWaitIdle(*ctx.device);
-
-    Destroy();
-    
-    createSwapChain();
-    createImageViews();
-}
-
-
-
 
 void SwapChain::createSwapChain() {
     SwapChainSupportDetails swapChainSupport = querySwapChainSupport(*ctx.physicalDevice, ctx);
@@ -181,95 +119,13 @@ void SwapChain::createImageViews() {
 
 
 
-// void SwapChain::createCommandPool() {
-
-//     QueueFamilyIndices queueFamilyIndices = findQueueFamilies(*ctx.physicalDevice, ctx);
-
-//     VkCommandPoolCreateInfo poolInfo{};
-//     poolInfo.sType = VK_STRUCTURE_TYPE_COMMAND_POOL_CREATE_INFO;
-//     poolInfo.queueFamilyIndex = queueFamilyIndices.graphicsFamily.value();
-//     poolInfo.flags = 0; // Optionel
-    
-
-//     if (vkCreateCommandPool(*ctx.device, &poolInfo, nullptr, &commandPool) != VK_SUCCESS) {
-//         throw std::runtime_error("échec de la création d'une command pool!");
-//     }
-
-//     ctx->commandPool = &commandPool;
-// }
-
-// void SwapChain::createCommandBuffers() {
-//     commandBuffers.resize(swapChainFramebuffers.size());
-
-//     VkCommandBufferAllocateInfo allocInfo{};
-//     allocInfo.sType = VK_STRUCTURE_TYPE_COMMAND_BUFFER_ALLOCATE_INFO;
-//     allocInfo.commandPool = commandPool;
-//     allocInfo.level = VK_COMMAND_BUFFER_LEVEL_PRIMARY;
-//     allocInfo.commandBufferCount = (uint32_t) commandBuffers.size();
-
-//     if (vkAllocateCommandBuffers(*ctx.device, &allocInfo, commandBuffers.data()) != VK_SUCCESS) {
-//         throw std::runtime_error("échec de l'allocation de command buffers!");
-//     }
-
-//     for (size_t i = 0; i < commandBuffers.size(); i++) {
-//         VkCommandBufferBeginInfo beginInfo{};
-//         beginInfo.sType = VK_STRUCTURE_TYPE_COMMAND_BUFFER_BEGIN_INFO;
-//         beginInfo.flags = 0; // Optionnel
-//         beginInfo.pInheritanceInfo = nullptr; // Optionel
-
-//         if (vkBeginCommandBuffer(commandBuffers[i], &beginInfo) != VK_SUCCESS) {
-//             throw std::runtime_error("erreur au début de l'enregistrement d'un command buffer!");
-//         }
-
-//         VkRenderPassBeginInfo renderPassInfo{};
-//         renderPassInfo.sType = VK_STRUCTURE_TYPE_RENDER_PASS_BEGIN_INFO;
-//         renderPassInfo.renderPass = renderPass;
-//         renderPassInfo.framebuffer = swapChainFramebuffers[i];
-
-//         renderPassInfo.renderArea.offset = {0, 0};
-//         renderPassInfo.renderArea.extent = swapChainExtent;
-
-//         VkClearValue clearColor = {{{0.95f, 0.30f, 0.60f, 1.0f}}};
-//         renderPassInfo.clearValueCount = 1;
-//         renderPassInfo.pClearValues = &clearColor;
-
-//         vkCmdBeginRenderPass(commandBuffers[i], &renderPassInfo, VK_SUBPASS_CONTENTS_INLINE);
-
-//         vkCmdBindPipeline(commandBuffers[i], VK_PIPELINE_BIND_POINT_GRAPHICS, pipeline->graphicsPipeline);
-
-//         VkBuffer vertexBuffers[] = {vertexBuffer->buffer};
-//         VkDeviceSize offsets[] = {0};
-//         vkCmdBindVertexBuffers(commandBuffers[i], 0, 1, vertexBuffers, offsets);
-//         vkCmdBindIndexBuffer(commandBuffers[i], indexBuffer->buffer, 0, VK_INDEX_TYPE_UINT16);
-
-//         vkCmdBindDescriptorSets(commandBuffers[i], VK_PIPELINE_BIND_POINT_GRAPHICS, pipeline->pipelineLayout, 0, 1, &descriptorSets[i], 0, nullptr);
-//         vkCmdDrawIndexed(commandBuffers[i], static_cast<uint32_t>(indices.size()), 1, 0, 0, 0);
-
-
-//         vkCmdEndRenderPass(commandBuffers[i]);
-
-//         if (vkEndCommandBuffer(commandBuffers[i]) != VK_SUCCESS) {
-//             throw std::runtime_error("échec de l'enregistrement d'un command buffer!");
-//         }
-//     }
-    
-
-// }
-
-void SwapChain::Destroy()
-{
-    std::cout << "[Destroying] SwapChain" << std::endl;
-
-
-    for (auto imageView : swapChainImageViews) {
-        vkDestroyImageView(*ctx.device, imageView, nullptr);
-        // delete imageView;
-    }
-    vkDestroySwapchainKHR(*ctx.device, swapChain, nullptr);
-}
 
 SwapChain::~SwapChain(){
-    Destroy();
+    std::cout << "[Destroying] SwapChain" << std::endl;
+    for (auto imageView : swapChainImageViews) {
+        vkDestroyImageView(*ctx.device, imageView, nullptr);
+    }
+    vkDestroySwapchainKHR(*ctx.device, swapChain, nullptr);
 }
 
 

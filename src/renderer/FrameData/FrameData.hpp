@@ -12,7 +12,6 @@ class FrameData  {
 
 
         Buffer          *cameraBuffer;
-        Buffer          *objectTransformBuffer;
 
         
         

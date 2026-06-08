@@ -38,8 +38,8 @@ FrameData::~FrameData()
 {
     if (imageAvailable == VK_NULL_HANDLE)
         return;
-    std::cout << "MMMMMM" << std::endl;
     vkDestroySemaphore(*ctx.device, imageAvailable, nullptr);
     vkDestroySemaphore(*ctx.device, renderFinished, nullptr);
     vkDestroyFence(*ctx.device, inFlight, nullptr);
+    delete cameraBuffer;
 }

@@ -64,7 +64,7 @@ void main()
     // COLOR = texture(screen_texture, uv);
     vec2 resolution = vec2(textureSize(screen_texture, 0)) ;
 
-    float pixelSize = 16.0;
+    float pixelSize = 1.0;
 
     vec2 pixelUV = floor((UV * resolution) / pixelSize) * pixelSize / resolution;
 

@@ -10,7 +10,7 @@ Window::Window(VulkanContext &ctx) {
 
     glfwWindowHint(GLFW_CLIENT_API, GLFW_NO_API);
 
-    window = glfwCreateWindow(WIDTH, HEIGHT, "Vulkan", nullptr, nullptr);
+    window = glfwCreateWindow(WIDTH, HEIGHT, "scop", nullptr, nullptr);
     glfwSetWindowUserPointer(window, this);
     glfwSetFramebufferSizeCallback(window, framebufferResizeCallback);
 
@@ -22,8 +22,9 @@ Window::Window(VulkanContext &ctx) {
 
 Window::~Window()
 {
-    std::cout << "[Destroying] Window" << std::endl;
     glfwDestroyWindow(window);
     glfwTerminate();
+
+    std::cout << "[Destroying] Window" << std::endl;
 
 }
